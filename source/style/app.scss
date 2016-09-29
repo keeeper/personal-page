@@ -1,9 +1,380 @@
 @import 'fonts';
+@import 'common/fontawesome/font-awesome';
+@import 'common/_variables';
+@import 'common/_mixins'; 
+
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+html {
+  box-sizing: border-box;
+}
+*, * {
+  &:before, &:after {
+    box-sizing: border-box;
+  }
+}
 
 body {
+  background: #faf8f0;
+  font: 400 16px/1.65 'Roboto', Arial, sans-serif;
+  color: #566358;
+}
+ul {
+  list-style-type: none;
+  text-decoration: none;
+}
+p {
+  padding: 0;
   margin: 0;
 }
 
-@import 'common/greating';
+/////////////
+// Grid
+////////////
+
+.container {
+  width: 1180px;
+  margin: 0 auto;
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }  
+}
+
+.one-third {
+  width: 33.33333%;
+  float: left;  
+  &:first-child {
+    margin-left: 0;
+  }
+}
 
 
+.content {
+  margin-bottom: 67px;
+}
+
+////////////////
+// Welcome page
+///////////////
+.welcome-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 40px 0 0;
+  color: #ffffff;
+  text-align: center;
+  background: rgba(18, 38, 32, .6);
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 380px;
+}
+.personal-info {
+  padding: 0 65px;
+  &__avatar-wrapper {
+    width: 141px;
+    height: 141px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto 6px auto;
+  }
+  &__avatar-img {
+    width: 100%;
+  }
+  &__title {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    font-size: 28px;
+  }
+  &__tagline {
+    font-weight: 400;
+    font-size: 16px;
+    margin: 0 0 16px 0;
+    padding: 0;
+  }
+}
+
+.main-nav {  
+  font-size: 0;
+  text-align: justify;
+  &__list {
+    padding: 0;
+    margin: 0;
+  }
+  &__item {
+    position: relative;
+    display: inline-block;
+    list-style-type: none;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 1px;
+      height: 100%;
+      right: 0;
+      top: 0;
+      background: rgba(255, 255, 255, .5);
+    }
+    &:last-child:after {
+      display: none;
+    }
+  }
+  &__link {
+    padding: 14px 32px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1;
+    text-decoration: none;
+    background: #639155;
+    display: block;
+    &:hover, &:focus {
+      background: #497f3a;
+    }
+    &:active {
+      background: #ddd;
+    }
+  }
+}
+
+.fullwidth-background {
+  position: relative;
+}
+
+
+
+///////////
+// Header
+///////////
+
+
+////////////////
+// Blog page
+////////////////
+.header {
+  color: #fff;
+  &_inner-page {
+    text-align: center;
+    padding: 82px 0 46px;
+    background: url('../img/bg-main.jpg') center 60% no-repeat;
+    background-size: cover;
+    margin-bottom: 66px;
+  }
+}
+.avatar-wrapper {
+  margin: 0 0 14px 0;
+  display: inline-block;
+  width: 141px;
+  height: 141px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.page-title {  
+  margin: 0 0 28px 0;
+  padding-bottom: 25px;
+  position: relative;
+  font: normal 63px/1 'SansusWebissimoRegular', 'Roboto', sans-serif;  
+  text-transform: uppercase;
+  &:after {    
+    content: '';    
+    position: absolute;
+    width: 89px;
+    height: 3px;
+    margin-top: 30px;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background: #fff;
+  }  
+}
+.page-slogan {
+  font: normal 16px/1 'Roboto', sans-serif;
+}
+
+.blog-sidebar {
+  width: 300px;
+  float: left;  
+}
+
+.vertica-nav {
+  &__list {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: right;    
+  }
+  &__item {
+    padding: 5px 0;
+    margin: 0;
+    &_active {
+      .vertica-nav__link {
+        color: #4e8839;
+        font-weight: 700;      
+        border-right: 3px solid #4e8839; 
+      }
+    }
+  }
+  &__link {
+    padding: 8px 16px 8px 0;    
+    color: #566358;
+    text-decoration: none;
+    display: block;
+    &:hover {
+      color: #4e8839;
+    }       
+  }
+}
+
+
+.blog-posts {
+  margin-left: 100px;
+  width: 700px;
+  float: left;
+}
+.blog-post {  
+  padding-bottom: 64px;
+  margin-bottom: 64px;
+  border-bottom: 5px solid rgba(55, 62, 66, .07);
+  &:last-child {
+    border: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }  
+  &__title {
+    margin: 0 0 18px 0;
+    font: normal 35px/1.05 'SansusWebissimoRegular', 'Roboto', sans-serif;
+    color: #566358;
+  }
+  &__date {
+    display: block;
+    color: #4e8839;
+    margin-bottom: 17px;
+  }
+  &__paragraph {
+    margin: 0 0 8px 0;
+    &_last {
+      margin-bottom: 0;
+    }
+  }
+  &__image {
+    margin-top: 12px;
+  }
+}
+
+///////////////
+// Footer
+///////////////
+.footer-top {
+  color: #ffffff;
+  padding: 24px 0 20px 0;
+  background: rgba(55,62,66,.85);
+}
+.footer-bottom {
+  color: #ffffff;
+  padding: 4px 0;
+  background: #81aa70;
+  text-align: center;
+  font-weight: 300;
+}
+.box-inner-wrapper {
+  padding: 0 25px;
+}
+.separator {
+    // border-right: 1px solid rgba(255, 255, 255, .2);
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 1px;
+      height: 90px;
+      right: 0;
+      top: 4px;
+      background: rgba(255, 255, 255, .2);
+    }
+}
+.site-info {
+  &__text {
+    font-weight: 300;
+  }
+}
+
+
+// Simple inline menu
+.simple-nav {
+  &__list {
+    font-size: 0;
+    padding: 0;    
+    margin: 0 0 6px 0;
+    font-weight: 500;
+  }
+  &__item {
+    margin-left: 15px;
+    display: inline-block;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  &__link {
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    &:hover, &:focus {
+      color: #4e8839;
+    }
+     &:active {
+      opacity: .3;
+     }
+  }
+}
+
+// Social links
+.social-nav {
+  &__list {    
+    margin: 0;
+    padding: 0;
+    font-size: 28px;    
+  }  
+  &__item{
+    display: inline-block;
+    margin-left: 22px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  &__link{
+    opacity: .5;    
+    &:hover, &:focus {
+      opacity: 1;
+    }
+    &:active {
+      opacity: .3;
+    } 
+  }
+  &__icon{
+      color: #fff;
+  }  
+}
+.social-nav__list_theme-green  {
+  margin-bottom: 30px;
+}
+
+.blockquote {
+  margin: 0;
+  padding: 0 0 0 12px;
+  font-style: italic;
+  &__text {  
+    font-weight: 300;
+    opacity: .5;
+  }
+  &__author {    
+    font-weight: 700;
+    opacity: .5
+  }
+}
+
+@import 'common/fullwidth-background';

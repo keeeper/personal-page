@@ -1,9 +1,5 @@
-#Учебная сборка Loftschool (выпускной проект №1) 
-
-Updated by: Pinchuk Mike
-- copy:fonts task added
-- sprite:image task added
-- copy:image exclude 'icons' folder from being copied
+#Project #1 Personal page
+###Theme: Forest
 
 Stack:
  - Gulp 4.0
@@ -15,4 +11,3 @@ Getting started:
 9. npm install gulpjs/gulp-cli -g  // Install the latest Gulp CLI tools globally
 4. npm install
 6. run "gulp" command to start
-
