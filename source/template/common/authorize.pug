@@ -1,0 +1,28 @@
+.authorize
+  h2.authorize__title Авторизуйтесь
+  form(class="authorize-form" action="#" method="POST")
+    .authorize-form__inner-wrapper
+      .authorize-form__field-wrapper
+        span(class="authorize-form__icon-wrapper")
+          +icon_fa("authorize-form", "user")
+        input(type="text" name="login" class="authorize-form__input" placeholder="Логин")         
+      .authorize-form__field-wrapper
+        span(class="authorize-form__icon-wrapper")
+          +icon_fa("authorize-form", "key")
+        input(type="password" name="pass" class="authorize-form__input" placeholder="Пароль")
+      .authorize-form__checkbox-wrapper
+        p.authorize-form__checkbox-title Я человек
+        input(type="checkbox" name="ishuman" class="authorize-form__checkbox" id="is-human-checkbox")
+        label(for="is-human-checkbox" class="authorize-form__checkbox-label")
+      .authorize-form__radio-main-wrapper
+        p.authorize-form__radio-title Вы точно не робот?
+        .authorize-form__radio-wrapper
+          input(type="radio" name="not-robot" value="Да" class="authorize-form__radio-button" id="radio-yes")
+          label(for="radio-yes" class="authorize-form__radio-label") Да
+            span
+        .authorize-form__radio-wrapper
+          input(type="radio" name="not-robot" value="Не уверен" class="authorize-form__radio-button" id="radio-no")
+          label(for="radio-no" class="authorize-form__radio-label") Не уверен
+            span
+    nav(class="main-nav main-nav_fluid")
+     +nav("main-nav", ["На главную", "Войти"])

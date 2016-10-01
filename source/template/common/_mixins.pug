@@ -5,8 +5,11 @@ mixin nav(className, items, activeItem, links)
 			li(class=`${className}__item ` + ( (ndx === activeItem ) ? `${className}__item_active` : ''))
 				a(class=`${className}__link` href="#") #{item}
 
-
 //- Social links
-mixin icon_fa(className, name, url)
+mixin icon_link_fa(className, name, url)
 	a(href=`${url}` class=`${className}__link`)
 		i(class='fa fa-' + `${name} ` + `${className}__icon`)
+
+//- Icons
+mixin icon_fa(className, name)
+	i(class='fa fa-' + `${name} ` + `${className}__icon`)
