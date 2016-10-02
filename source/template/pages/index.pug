@@ -3,10 +3,11 @@ extends ../_template
 block content  
   a(class="authorize-btn" href="#") Авторизоваться
   .fullwidth-background
-    section.welcome-box
+    section.st-box
       .personal-info
         include ../common/personal-info        
-      include ../common/social-links
+      .social-nav-wrapper.social-nav-wrapper_theme-green
+        include ../common/social-links
       nav.main-nav
         +nav("main-nav", ["Мои работы", "Обо мне", "Блог"])    
 

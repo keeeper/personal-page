@@ -12,7 +12,7 @@ html, body {
 html {
   box-sizing: border-box;
 }
-*, * {
+*, *{
   &:before, &:after {
     box-sizing: border-box;
   }
@@ -21,7 +21,7 @@ input {
   outline: none;
 }
 body {
-  background: #faf8f0;
+  background: #f4f5f0;
   font: 400 16px/1.65 'Roboto', Arial, sans-serif;
   color: #566358;
 }
@@ -40,12 +40,12 @@ p {
 
 .container {
   width: 1180px;
-  margin: 0 auto;
+  margin: 0 auto;  
   &:after {
     content: '';
     display: table;
     clear: both;
-  }  
+  }
 }
 
 .one-third {
@@ -64,13 +64,29 @@ p {
 
 .content {
   margin-bottom: 67px;
+  &_nomargin {
+    margin-bottom: 0;
+  }
 }
 
+// Hamburger menu
+.hamburger-nav {
+  &_absolute {
+    position: absolute;
+    top: 28px;
+    right: 30px;
+  }
+  &__button {
+    display: block;
+  }
+  &__icon {
+    color: #fff;
+    font-size: 48px;
+    line-height: 1;
+  }
+}
 
-////////////////
-// Welcome page
-///////////////
-.welcome-box {
+.st-box {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -82,12 +98,23 @@ p {
   border-radius: 8px;
   overflow: hidden;
   min-width: 380px;
+  box-sizing: border-box;
+  &_contact {
+    padding: 35px 40px;
+    top: 36%;
+    left: 50%;
+    transform: translate(-50%, -36%);
+    background: rgba(244, 245, 240, .85);
+  }
 }
+
+// Personal info
 .personal-info {
+  text-align: center;
   padding: 0 65px;
   &__avatar-wrapper {
-    width: 141px;
-    height: 141px;
+    width: 140px;
+    height: 140px;
     overflow: hidden;
     border-radius: 50%;
     margin: 0 auto 6px auto;
@@ -109,6 +136,21 @@ p {
   }
 }
 
+.personal-info {
+  &_large{
+    .personal-info__avatar-wrapper {
+      margin-bottom: 26px;
+    }
+    .personal-info__title {
+      font-size: 35px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+  }
+}
+
+
+// Main nav
 .main-nav {  
   font-size: 0;
   text-align: justify;
@@ -177,7 +219,7 @@ p {
     position: relative;
     margin: 0 0 30px 0;
     padding: 0 0 25px 0;
-    font: normal 35px/1 'SansusWebissimoRegular', sans-serif;    
+    font: normal 35px/1 'Sansus_Webissimo-Regular', sans-serif;    
     color: #fff;
     text-transform: uppercase;
     &:after {
@@ -317,25 +359,136 @@ p {
   }
 }
 
+////////////////
+// About page
+////////////////
+.col-left {
+  float: left;
+  width: 50%;
+  background: #ebefe2;
+}
+.col-right {
+  float: right;
+  width: 50%;   
+}
+.article-content {
+  &__inner-wrapper {
+    padding: 12px 70px 48px 70px;
+    &_small {
+      padding: 12px 0 0 40px;
+    }
+  }
+  &__image {
+    margin-bottom: 29px;
+  }  
+  &__paragraph {
+    line-height: 1.5;
+    margin-bottom: 12px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+//Skills
+
+.skills {
+  &-inner-wrapper {
+    margin-bottom: 29px;
+  }
+  &__list-title {
+    padding: 0;    
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1;
+    margin: 0 0 17px 0;
+  }
+  &__list {
+    margin: 0;
+    padding: 0;
+  } 
+  &__item {
+    display: inline-block;
+    margin-left: 31px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+// Google Map
+.map-wrapper {
+  position: relative;
+  height: 974px;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+}
+
+// Contact info
+.contact {  
+  &__item {   
+    text-align: left;
+    color: #566358;
+    margin-bottom: 16px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__icon {
+     display: inline-block;
+    color: #6c9c5a;
+    font-size: 24px;
+    width: 34px;
+    vertical-align: middle;
+  }
+  &__text {
+
+  }
+  &__link {
+    color: #566358;
+    text-decoration: none;
+    &:hover {
+      color: #6c9c5a;
+    }
+  }
+}
+
+
 
 ////////////////
 // Blog page
 ////////////////
 .header {
   color: #fff;
-  &_inner-page {
-    text-align: center;
-    padding: 82px 0 46px;
-    background: url('../img/bg-main.jpg') center 60% no-repeat;
-    background-size: cover;
+  background-size: cover;
+  text-align: center;
+  background: url('../img/bg-main.jpg') center 60% no-repeat;
+  &_inner-page {    
+    padding: 82px 0 46px;  
     margin-bottom: 66px;
+  }
+  &_inner-page-high{
+    padding: 153px 0 200px;
+    background: url('../img/bg-main.jpg') center 39% no-repeat;    
+    margin-bottom: 0;
+  }
+   &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 20%;     
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.3) 8%,rgba(0,0,0,0) 100%);    
   }
 }
 .avatar-wrapper {
   margin: 0 0 14px 0;
   display: inline-block;
-  width: 141px;
-  height: 141px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -343,7 +496,7 @@ p {
   margin: 0 0 28px 0;
   padding-bottom: 25px;
   position: relative;
-  font: normal 63px/1 'SansusWebissimoRegular', 'Roboto', sans-serif;  
+  font: normal 63px/1 'Sansus_Webissimo-Regular', 'Roboto', sans-serif;  
   text-transform: uppercase;
   &:after {    
     content: '';    
@@ -355,7 +508,36 @@ p {
     bottom: 0;
     transform: translateX(-50%);
     background: #fff;
-  }  
+  }
+  &_extra {
+    padding-bottom: 13px;
+    color: #373e42; 
+    margin-bottom: 36px;  
+    text-align: center;
+     &:after {
+        background: #373e42;
+     }
+  }
+  &_small {
+    font-size: 35px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    color: #566358;
+    text-align: center;
+    &:after {
+        background: #566358;
+     }
+  }
+  &_multiline {
+    max-width: 255px;
+    line-height: 1.15;
+    padding-bottom: 16px;    
+    margin: 0 auto 34px auto;
+  }
+  &_extramargin {
+    margin-bottom: 30px;
+    padding-bottom: 24px;
+  }
 }
 .page-slogan {
   font: normal 16px/1 'Roboto', sans-serif;
@@ -410,7 +592,7 @@ p {
   }  
   &__title {
     margin: 0 0 18px 0;
-    font: normal 35px/1.05 'SansusWebissimoRegular', 'Roboto', sans-serif;
+    font: normal 35px/1.05 'Sansus_Webissimo-Regular', 'Roboto', sans-serif;
     color: #566358;
   }
   &__date {
@@ -432,6 +614,10 @@ p {
 ///////////////
 // Footer
 ///////////////
+.footer-wrapper {
+  margin-top: -182px;
+  position: relative;
+}
 .footer-simple {
   position: relative;  
   top: 93%;
@@ -517,17 +703,32 @@ p {
     }
   }
   &__link{
+    color: #fff;
     opacity: .5;
     &:hover, &:focus, &:active {
       opacity: 1;
     }
   }
-  &__icon{
-      color: #fff;
-  }  
 }
-.social-nav__list_theme-green  {
-  margin-bottom: 30px;
+// Social Green theme
+.social-nav {
+  &-wrapper {
+    margin-bottom: 30px;
+    &_absolute {
+      position: absolute;
+      margin-bottom: 0;
+      left: 30px;
+      top: 18px;
+    }
+    .social-nav {
+      &__link {
+        opacity: 1;
+        &:hover {
+          color: #4e8839;
+        }
+      }
+    }
+  }  
 }
 
 .blockquote {
@@ -543,5 +744,23 @@ p {
     opacity: .5
   }
 }
+
+// Extra classes
+.mb50 {
+  margin-bottom: 50px;
+}
+.left-bg {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #ebefe2;
+  }
+}
+
 
 @import 'common/fullwidth-background';

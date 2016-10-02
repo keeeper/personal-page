@@ -1,21 +1,10 @@
 @font-face {
-    font-family: 'sansus_webissimoregular';
-    src: url('../fonts/sansus-webissimo-regular-webfont.eot');
-    src: url('../fonts/sansus-webissimo-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/sansus-webissimo-regular-webfont.woff2') format('woff2'),
-         url('../fonts/sansus-webissimo-regular-webfont.woff') format('woff'),
-         url('../fonts/sansus-webissimo-regular-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'font_awesome';
-    src: url('../fonts/fontawesome-webfont.eot');
-    src: url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/fontawesome-webfont.woff2') format('woff2'),
-         url('../fonts/fontawesome-webfont.woff') format('woff'),
-         url('../fonts/fontawesome-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'Sansus_Webissimo-Regular';
+	src: url('../fonts/sansus_webissimo-regular-webfont.eot');
+	src: url('../fonts/sansus_webissimo-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/sansus_webissimo-regular-webfont.woff2') format('woff2'),
+	     url('../fonts/sansus_webissimo-regular-webfont.woff') format('woff'),
+	     url('../fonts/sansus_webissimo-regular-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }

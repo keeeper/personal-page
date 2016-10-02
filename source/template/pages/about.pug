@@ -1,0 +1,41 @@
+extends ../_template
+
+block title
+	title Обо мне
+	
+block content
+	header.header.header_inner-page-high
+		.personal-info.personal-info_large
+			include ../common/personal-info
+	.social-nav-wrapper.social-nav-wrapper_theme-green.social-nav-wrapper_absolute
+		include ../common/social-links	
+	.hamburger-nav.hamburger-nav_absolute
+		a(class="hamburger-nav__button" href="#")
+			.hamburger-nav__icon
+				+icon_fa("hamburger-nav", "bars")
+		.hamburger-nav__list
+	main(class="content content_nomargin container")
+		section.col-left
+			article.article-content
+				.article-content__inner-wrapper.left-bg
+					h3(class="page-title page-title_extra") Обо мне
+					img(src="/assets/img/profile-img-lg.jpg" class="article-content__image")
+					h4(class="page-title page-title_small") Кто я	
+					p.article-content__paragraph Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+
+					p.article-content__paragraph Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+		section.col-right
+			article.article-content
+				div(class="article-content__inner-wrapper article-content__inner-wrapper_small")
+					h4(class="page-title page-title_small page-title_multiline") Чем я могу быть вам полезен
+					p(class="article-content__paragraph mb50") Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.					
+					
+					include ../common/skills
+					
+	.map-wrapper
+		include ../common/contact
+		img(src="/assets/img/map-placeholder.jpg")
+		
+	.footer-wrapper
+		include ../common/footer
