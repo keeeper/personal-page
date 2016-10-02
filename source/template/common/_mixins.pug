@@ -7,7 +7,7 @@ mixin nav(className, items)
 
 //- Social links
 mixin icon_link_fa(className, name, url)
-	a(href=`${url}` class=`${className}__link`)
+	a(href=`${url}` class=`${className}__link` target="_blank")
 		i(class='fa fa-' + `${name} ` + `${className}__icon`)
 
 //- Icons
