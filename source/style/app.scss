@@ -290,7 +290,7 @@ p {
 ////////////////
 .content-bottom {
   position: relative;
-  background: url('../img/works-bottom-bg.jpg') 0 bottom no-repeat #f4f5f0;
+  background: #f4f5f0 url('../img/works-bottom-bg.jpg') 0 bottom no-repeat ;
   background-size: cover;
   padding-bottom: 340px;
 }
@@ -310,6 +310,7 @@ p {
     margin-bottom: 66px;
   }
   &_inner-page-high{
+    position: relative;
     padding: 153px 0 200px;
     background: url('../img/bg-main.jpg') center 39% no-repeat;    
     margin-bottom: 0;
