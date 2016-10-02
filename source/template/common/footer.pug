@@ -6,7 +6,25 @@ footer.footer
 					p.site-info__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
 			.one-third
 				.separator.box-inner-wrapper
-						+nav('simple-nav', ["Мои работы", "Обо мне", "Блог", "Авторизация"])
+						+nav('simple-nav', [
+			          {
+			            name: "Мои работы",
+			            link: "./works.html"
+			          },
+			          {
+			            name: "Обо мне",
+			            link: "./about.html"
+			          },
+			          {
+			            name: "Блог",
+			            link: "./blog.html"
+			          },
+			          {
+			          	name: "Авторизация",
+			          	link: "./index.html"
+			          }
+			        ])  
+							
 						ul.social-nav__list
 							li.social-nav__item
 								+icon_link_fa('social-nav', 'vk', "https://vk.com/")

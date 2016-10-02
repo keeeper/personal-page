@@ -59,6 +59,7 @@ p {
 .site-wrapper {
   width: 100%;
   height: 100%;
+  min-width: 1180px;
   position: relative;
 }
 
@@ -105,7 +106,7 @@ p {
     left: 50%;
     transform: translate(-50%, -36%);
     background: rgba(244, 245, 240, .85);
-  }
+  }  
 }
 
 // Personal info
@@ -135,7 +136,6 @@ p {
     padding: 0;
   }
 }
-
 .personal-info {
   &_large{
     .personal-info__avatar-wrapper {
@@ -212,152 +212,7 @@ p {
 }
 
 
-// Authorize block
-.authorize {
-  display: none; // Hide block
-  &__title {
-    position: relative;
-    margin: 0 0 30px 0;
-    padding: 0 0 25px 0;
-    font: normal 35px/1 'Sansus_Webissimo-Regular', sans-serif;    
-    color: #fff;
-    text-transform: uppercase;
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 90px;
-      height: 3px;
-      background: #fff;
-      transform: translateX(-50%);
-    }
-  }
-  &-form {
-    text-align: center;
-    &__inner-wrapper{
-      padding: 0 20px;
-    }
-    &__field-wrapper {
-      width: 100%;
-      display: table;
-      margin-bottom: 20px;     
-    }
 
-    &__checkbox {
-      display: none;
-      &:checked + .authorize-form__checkbox-label {
-        &:after {
-          content:"\f00c";
-          position: absolute;
-          top: 0;
-          left: 3px;
-          font-size: 12px;
-          font-family: FontAwesome;
-        }
-      }
-      &-wrapper {
-        margin: 0 auto 16px auto;
-        width: 104px;
-        overflow: hidden;
-      }
-      &-title {
-        float: right;
-        line-height: 1.1;
-      }
-      &-label {
-        float: left;
-        display: inline-block;
-        position: relative;
-        width: 18px;
-        height: 18px;        
-        background: #6c9c5a;
-        cursor: pointer;
-        border-radius: 2px;
-      }
-    }
-    &__input {
-      width: 296px;  
-      box-sizing: border-box;
-      border: none;
-      padding: 10px 17px;
-      border-top-right-radius: 30px;
-      border-bottom-right-radius: 30px;
-    }
-    &__icon {
-      font-size: 18px;
-      color: #c4cbcd;
-      &-wrapper  {
-        background: #f0efe9;
-        padding: 13px 16px 14px 14px;
-        border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px;         
-      }
-    }
-    &__radio {
-      &-main-wrapper {
-        overflow: hidden;
-        margin: 0 auto 35px auto;
-        max-width: 200px;
-      }
-      &-wrapper {
-        float: left;
-        text-align: left;     
-        margin-right: 40px;
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-      &-title {
-        font-weight: 700;
-        margin-bottom: 2px;
-      }
-      &-button {
-        display: none;
-        &:checked + .authorize-form__radio-label {
-          color: #6c9c5a;
-          span {
-            &:after { 
-              content: '';
-              position: absolute;
-              width: 8px;
-              height: 8px;
-              top: 6px;
-              left: 6px;
-              background: #6c9c5a;
-              border-radius: 50%;
-            }
-          }
-        }
-      }
-      &-label {
-        margin-left: 10px;
-        span {
-          float: left;
-          display: inline-block;
-          position: relative;
-          margin-top: 2px;
-          width: 20px;
-          height: 20px;        
-          background: #ffffff;
-          cursor: pointer;
-          border-radius: 50%;
-        }
-      }
-    }
-  }
-}
-.main-nav {
-  &_fluid {
-    .main-nav__item {
-      width: 50%;      
-    }
-    .main-nav__link {
-      padding: 14px 0;  
-      text-align: center;    
-    }
-  }
-}
 
 ////////////////
 // About page
@@ -386,32 +241,6 @@ p {
     margin-bottom: 12px;
     &:last-child {
       margin-bottom: 0;
-    }
-  }
-}
-
-//Skills
-
-.skills {
-  &-inner-wrapper {
-    margin-bottom: 29px;
-  }
-  &__list-title {
-    padding: 0;    
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 1;
-    margin: 0 0 17px 0;
-  }
-  &__list {
-    margin: 0;
-    padding: 0;
-  } 
-  &__item {
-    display: inline-block;
-    margin-left: 31px;
-    &:first-child {
-      margin-left: 0;
     }
   }
 }
@@ -456,6 +285,16 @@ p {
 }
 
 
+////////////////
+// Works page
+////////////////
+.content-bottom {
+  position: relative;
+  background: url('../img/works-bottom-bg.jpg') 0 bottom no-repeat #f4f5f0;
+  background-size: cover;
+  padding-bottom: 340px;
+}
+
 
 ////////////////
 // Blog page
@@ -465,6 +304,7 @@ p {
   background-size: cover;
   text-align: center;
   background: url('../img/bg-main.jpg') center 60% no-repeat;
+  background-size: cover;
   &_inner-page {    
     padding: 82px 0 46px;  
     margin-bottom: 66px;
@@ -480,7 +320,7 @@ p {
     left: 0;
     top: 0;
     width: 100%;
-    height: 20%;     
+    height: 10%;     
     background: linear-gradient(to bottom,  rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.3) 8%,rgba(0,0,0,0) 100%);    
   }
 }
@@ -536,9 +376,23 @@ p {
   }
   &_extramargin {
     margin-bottom: 30px;
-    padding-bottom: 24px;
+    padding-bottom: 26px;
+  }
+  &_extramargin2 {
+    margin-bottom: 25px;
+    padding-bottom: 34px;
   }
 }
+.extra-title-wrapper {
+  width: 100%;  
+  padding: 62px 0 6px 0; 
+  background: #f8f9f5;
+  &_no-bg{
+    background:none;
+  }
+
+}
+
 .page-slogan {
   font: normal 16px/1 'Roboto', sans-serif;
 }
@@ -633,7 +487,7 @@ p {
 .footer-bottom {
   color: #ffffff;
   padding: 4px 0;
-  background: #81aa70;
+  background: rgba(108, 156, 90, .85);
   text-align: center;
   font-weight: 300;
 }
@@ -673,6 +527,11 @@ p {
     display: inline-block;
     &:first-child {
       margin-left: 0;
+    }
+    &_active {
+      .simple-nav__link {
+        color: #4e8839;
+      }
     }
   }
   &__link {
@@ -714,21 +573,41 @@ p {
 .social-nav {
   &-wrapper {
     margin-bottom: 30px;
+    &_theme-green {
+      .social-nav__link {
+        opacity: 1;
+        &:hover {
+          color: #4e8839;
+        }        
+      }
+    }
+  }  
+}
+// Social Green Transparent
+.social-nav {
+  &-wrapper {
+    margin-bottom: 30px;
+    &_theme-transp-green {
+      .social-nav__link {
+        opacity: .5;
+        &:hover {
+          color: #4e8839;
+          opacity: 1;
+        }        
+      }
+    }
+  }  
+}
+// Social Absolute Positioning
+.social-nav {
+  &-wrapper {    
     &_absolute {
       position: absolute;
       margin-bottom: 0;
       left: 30px;
       top: 18px;
-    }
-    .social-nav {
-      &__link {
-        opacity: 1;
-        &:hover {
-          color: #4e8839;
-        }
-      }
-    }
-  }  
+    }  
+  }
 }
 
 .blockquote {
@@ -763,4 +642,12 @@ p {
 }
 
 
+.authorize-box {
+  display: none;
+}
 @import 'common/fullwidth-background';
+@import 'common/slider';
+@import 'common/authorize';
+@import 'common/skills';
+@import 'common/testimonials';
+@import 'common/contact-form';

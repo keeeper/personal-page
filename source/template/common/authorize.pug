@@ -24,5 +24,7 @@
           input(type="radio" name="not-robot" value="Не уверен" class="authorize-form__radio-button" id="radio-no")
           label(for="radio-no" class="authorize-form__radio-label") Не уверен
             span
-    nav(class="main-nav main-nav_fluid")
-     +nav("main-nav", ["На главную", "Войти"])
+    nav(class="main-nav main-nav_fluid")    
+      .main-nav__item 
+        a(href="index.html" class="main-nav__link") На главную
+      button(type="reset" class="authorize-form__button") Войти

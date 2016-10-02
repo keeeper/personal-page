@@ -1,0 +1,26 @@
+.slider
+	.slider__inner-wrapper
+		.slide
+			.slide__image
+				img(src="/assets/img/work-1.png" class="slide__image" alt="Work 1")
+			.slide__project-desc
+				.h4(class="slide__project-title") Сайт школы онлайн Образования
+				p.slide__project-tech HTML , CSS, JAVASCRIPT
+				a(class="slide__project-link" href="#")
+					+icon_fa("slide", "link")
+					span Посмотреть сайт
+	.pagination
+		ul.pagination__list
+			li.pagination__item
+				a(href="#" class="pagination__link pagination__link_active")
+			li.pagination__item
+				a(href="#" class="pagination__link")
+			li.pagination__item
+				a(href="#" class="pagination__link")
+			li.pagination__item
+				a(href="#" class="pagination__link")
+	.navigation
+		a(class="navigation__arrow navigation__arrow_left" href="#")
+			+icon_fa("navigation", "chevron-left")
+		a(class="navigation__arrow navigation__arrow_right" href="#")
+			+icon_fa("navigation", "chevron-right")

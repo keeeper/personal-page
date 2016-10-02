@@ -1,9 +1,9 @@
 //- Navigation
-mixin nav(className, items, activeItem, links)
+mixin nav(className, items)
 	ul(class=`${className}__list`)
 		each item, ndx in items
-			li(class=`${className}__item ` + ( (ndx === activeItem ) ? `${className}__item_active` : ''))
-				a(class=`${className}__link` href="#") #{item}
+			li(class=`${className}__item ` + ( (item.name === currentPage) ? `${className}__item_active` : ''))
+				a(class=`${className}__link` href=`${item.link}`) #{item.name}
 
 //- Social links
 mixin icon_link_fa(className, name, url)

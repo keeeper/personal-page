@@ -3,14 +3,28 @@ extends ../_template
 block content  
   a(class="authorize-btn" href="#") Авторизоваться
   .fullwidth-background
-    section.st-box
+    section.st-box.personal-info-box      
       .personal-info
         include ../common/personal-info        
-      .social-nav-wrapper.social-nav-wrapper_theme-green
+      .social-nav-wrapper.social-nav-wrapper_theme-transp-green
         include ../common/social-links
       nav.main-nav
-        +nav("main-nav", ["Мои работы", "Обо мне", "Блог"])    
+        +nav("main-nav", [
+          {
+            name: "Мои работы",
+            link: "./works.html"
+          },
+          {
+            name: "Обо мне",
+            link: "./about.html"
+          },
+          {
+            name: "Блог",
+            link: "./blog.html"
+          }
+        ])    
 
+    section.st-box.authorize-box
       include ../common/authorize
              
   footer.footer-simple

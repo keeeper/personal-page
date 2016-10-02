@@ -1,0 +1,115 @@
+// Slider
+.slider {
+  position: relative;
+  background:#ebefe2; 
+  height: 750px;
+  .slider__inner-wrapper {
+     width: 1020px;
+     margin: 0 auto;
+  }
+}
+.slide {   
+  position: absolute;
+  overflow: hidden;
+  bottom: 0;  
+  &__image {
+    margin-bottom: -3px;
+    float: left;
+  }
+  &__project-title {
+    position: relative;    
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    color: #566358;
+    margin: 0 0 28px 0;
+    font: normal 35px/1.1 'Sansus_Webissimo-Regular', 'Roboto', sans-serif;   
+    text-transform: uppercase;
+    &:after {    
+      content: '';    
+      position: absolute;
+      width: 89px;
+      height: 3px;
+      margin-top: 30px;
+      left: 0;
+      bottom: 0;      
+      background: #566358;
+    }
+  }
+  &__project-desc {   
+    padding-left: 100px;
+    padding-top: 160px;
+    float: left;
+    display: block;
+    max-width: 320px;
+  }
+  &__project-tech {
+    color: #4e8839;
+    margin-bottom: 50px;
+  }
+  &__project-link {   
+    display: inline-block;
+    padding: 8px 20px 8px 18px;    
+    border-radius: 30px;
+    color: #fff;
+    background: #6c9c5a;
+    text-decoration: none;
+    transition: background .2s;    
+    .slide__icon {
+      font-size: 20px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    &:hover {
+      background: #566358;      
+    }
+  }
+}
+.pagination {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+  &__item {
+     display: inline-block;
+     margin-left: 20px;
+     &:first-child {
+      margin-left: 0;
+     }
+  }
+  &__link {
+    display: block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #6c9c5a;  
+    transition: background .2s; 
+    &_active, &:hover{
+      background: #6c9c5a;
+    }    
+  }
+}
+.navigation {
+  &__arrow {
+    position: absolute;
+    top: 50%;  
+    transform: translateY(-50%);
+    display: block;
+    color: #92b583;
+    font-size: 32px;
+    transition: color .2s;
+    &:hover {
+      color: #566358;
+    }
+    &_left {
+      left: 30px;
+    }
+    &_right {
+      right: 30px;
+    }
+  }
+}
