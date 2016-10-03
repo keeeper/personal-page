@@ -130,7 +130,7 @@ h4 {
 // Personal info
 .personal-info {
   text-align: center;
-  padding: 0 65px;
+  padding: 0 65px 105px 65px;
   &__avatar-wrapper {
     width: 140px;
     height: 140px;
@@ -155,7 +155,21 @@ h4 {
   }
 }
 .personal-info {
-  &_large{
+  &_works-theme {
+    padding-bottom: 155px;
+    .personal-info__avatar-wrapper {
+      margin-bottom: 26px;
+    }
+    .personal-info__title {
+      font-size: 35px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+  }
+}
+.personal-info {
+  &_about-theme{
+    padding-bottom: 105px;
     .personal-info__avatar-wrapper {
       margin-bottom: 26px;
     }
@@ -235,6 +249,35 @@ h4 {
 ////////////////
 // About page
 ////////////////
+
+.triangle {  
+  &__left {
+    fill: #f4f5f0;
+  }
+  &__right {
+    fill: #f4f5f0;
+  }  
+}
+.triangle_blog-theme {
+   margin-top: -51px;
+}
+.triangle_about-theme {
+   .triangle {
+      &__left {
+        fill: #ebefe2;
+      }
+   }
+}
+.triangle_works-theme {
+   .triangle {
+      &__left {
+        fill: #f8f9f5;
+      } 
+      &__right {
+        fill: #f8f9f5;
+      }
+   }
+}
 .col-left {
   float: left;
   width: 50%;
@@ -318,18 +361,19 @@ h4 {
 // Blog page
 ////////////////
 .header {
+  font-size: 0;
   color: #fff;
   background-size: cover;
   text-align: center;
   background: url('../img/bg-main.jpg') center 60% no-repeat;
-  background-size: cover;
+  background-size: cover;  
   &_inner-page {    
-    padding: 82px 0 46px;  
-    margin-bottom: 66px;
+    padding: 82px 0 0;  
+    margin-bottom: 53px;
   }
   &_inner-page-high{
     position: relative;
-    padding: 153px 0 200px;
+    padding: 153px 0 0;
     background: url('../img/bg-main.jpg') center 39% no-repeat;    
     margin-bottom: 0;
     background-size: cover;
@@ -345,7 +389,7 @@ h4 {
   }
 }
 .avatar-wrapper {
-  margin: 0 0 14px 0;
+  margin: 0 0 22px 0;
   display: inline-block;
   width: 140px;
   height: 140px;
@@ -405,7 +449,7 @@ h4 {
 }
 .extra-title-wrapper {
   width: 100%;  
-  padding: 62px 0 6px 0; 
+  padding: 55px 0 6px 0; 
   background: #f8f9f5;
   &_no-bg{
     background:none;
@@ -644,6 +688,9 @@ h4 {
   }
 }
 
+
+
+
 // Extra classes
 .mb50 {
   margin-bottom: 50px;
@@ -660,8 +707,6 @@ h4 {
     background-color: #ebefe2;
   }
 }
-
-
 .authorize-box {
   display: none;
 }
