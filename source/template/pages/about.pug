@@ -21,17 +21,17 @@ block content
 			polygon(class="triangle__right" points="1000,00 1000,86 500,86 500,84" fill="none")
 
 	main(class="content content_nomargin container")
-		section.col-left
+		div.col-left
 			article.article-content
 				.article-content__inner-wrapper.left-bg
 					h3(class="page-title page-title_extra") Обо мне
-					img(src="assets/img/profile-img-lg.jpg" class="article-content__image")
+					img(src="assets/img/profile-img-lg.jpg" class="article-content__image" alt="Profile image large")
 					h4(class="page-title page-title_small") Кто я	
 					p.article-content__paragraph Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
 
 					p.article-content__paragraph Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
-		section.col-right
+		div.col-right
 			article.article-content
 				div(class="article-content__inner-wrapper article-content__inner-wrapper_small")
 					h4(class="page-title page-title_small page-title_multiline") Чем я могу быть вам полезен
@@ -41,7 +41,7 @@ block content
 					
 	.map-wrapper
 		include ../common/contacts
-		img(src="assets/img/map-placeholder.jpg")
+		img(src="assets/img/map-placeholder.jpg" alt="Google map")
 		
 	.footer-wrapper
 		include ../common/footer

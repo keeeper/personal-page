@@ -2,14 +2,16 @@ section(class="st-box st-box_contact contact")
 	h4(class="page-title page-title_small page-title_extramargin") Контакты
 	.contact__item
 		+icon_fa("contact", "skype")
-		span.contact__text skype_kdn
+		span.contact__text
+			a(href="skype:skype_kdn" class="contact__link") skype_kdn
 	.contact__item
 		+icon_fa("contact", "envelope")
 		span.contact__text 
 			a(href="mailto:astahov@gmail.com" class="contact__link") astahov@gmail.com
 	.contact__item
 		+icon_fa("contact", "phone")
-		span.contact__text +7 931 200 93 24
+		span.contact__text
+			a(href="tel:+79312009324" class="contact__link") +7 931 200 93 24
 	.contact__item
 		+icon_fa("contact", "map-marker")
 		span.contact__text Новосибирск, ул. Инская, д.14
