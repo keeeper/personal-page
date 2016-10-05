@@ -1,0 +1,80 @@
+.fs-nav {	
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	&__menu {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(108, 156, 90, .87);		
+		width: 100vw;
+		height: 100vh;
+	}
+	// Open button
+	&__toggle {
+    &-button {
+			position: absolute;
+	    top: 28px;
+	    right: 30px;
+   		display: block;
+   		
+   		&_hide {
+   			display: none;
+   		}
+   		&_show {
+   			display: block;
+   		}
+
+	  }
+	  &-icon {
+	    color: #fff;
+	    font-size: 48px;
+	    line-height: 1;
+	  }
+	}
+	// Close button
+
+
+	&-inner-wrapper {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+	&__list {
+		padding: 0;
+		margin: 0;
+		font: normal 63px/1 'Sansus_Webissimo-Regular', 'Roboto', sans-serif;	
+		text-align: center;
+	}
+	&__item {
+		position: relative;
+		padding-bottom: 29px;
+		margin-bottom: 50px;
+		&_active {		
+			&:after {
+	      content: '';
+	      position: absolute;
+	      width: 90px;
+	      height: 3px;
+	      left: 50%;
+	      bottom: 4px;
+	      background: #fff;
+	      transform: translateX(-50%);
+	    }
+	  }
+	}
+	&__link {
+		color: #fff;
+		text-decoration: none;
+		text-transform: uppercase;
+		transition: opacity .2s;
+		&:hover, &:focus, &:active {
+			opacity: .7;
+		}
+	}
+}

@@ -1,0 +1,29 @@
+.fs-nav
+	.fs-nav__toggle-button
+		a(class="fs-nav__toggle-link" href="#")
+			.fs-nav__toggle-icon
+				+icon_fa("fs-nav", "bars")
+	.fs-nav__menu
+		.fs-nav__toggle-button
+			a(class="fs-nav__toggle-link" href="#")
+				.fs-nav__toggle-icon
+					+icon_fa("fs-nav", "times")
+		.fs-nav-inner-wrapper
+			+nav('fs-nav', [
+          {
+            name: "Мои работы",
+            link: "works.html"
+          },
+          {
+            name: "Обо мне",
+            link: "about.html"
+          },
+          {
+            name: "Блог",
+            link: "blog.html"
+          },
+          {
+          	name: "Авторизация",
+          	link: "index.html"
+          }
+      ])  

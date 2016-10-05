@@ -11,11 +11,7 @@ block content
 			include ../common/personal-info
 		.social-nav-wrapper.social-nav-wrapper_theme-green.social-nav-wrapper_absolute
 			include ../common/social-links	
-		.hamburger-nav.hamburger-nav_absolute
-			a(class="hamburger-nav__button" href="#")
-				.hamburger-nav__icon
-					+icon_fa("hamburger-nav", "bars")
-			.hamburger-nav__list
+		include ../common/fs-nav
 		svg(class="traingle triangle_works-theme" viewBox="0 0 1000 86" preserveAspectRatio="none")
 			polygon(class="triangle__left" points="0,0 0,86 500.8,86 500,84" fill="none")
 			polygon(class="triangle__right" points="1000,00 1000,86 500,86 500,84" fill="none")

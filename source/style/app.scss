@@ -107,23 +107,6 @@ img {
   }
 }
 
-// Hamburger menu
-.hamburger-nav {
-  &_absolute {
-    position: absolute;
-    top: 28px;
-    right: 30px;
-  }
-  &__button {
-    display: block;
-  }
-  &__icon {
-    color: #fff;
-    font-size: 48px;
-    line-height: 1;
-  }
-}
-
 .st-box {
   position: absolute;
   top: 50%;
@@ -963,3 +946,4 @@ img {
 @import 'common/skills';
 @import 'common/testimonials';
 @import 'common/contact-form';
+@import 'common/fs-nav';

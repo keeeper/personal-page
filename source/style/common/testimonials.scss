@@ -1,5 +1,7 @@
 .container_testimonials {
-  width: 720px;
+  @include laptop(){
+    width: 720px;
+  }
 }
 .testimonials {
   max-width: 780px;
