@@ -24,6 +24,16 @@ body {
   background: #f4f5f0;
   font: 400 16px/1.65 'Roboto', Arial, sans-serif;
   color: #566358;
+
+  @include laptop() {
+    font-size: 15px;
+  }
+  @include laptop() {
+    font-size: 13px;
+  }  
+  @include phone() {
+    font-size: 13px;
+  }
 }
 ul {
   list-style-type: none;
@@ -69,7 +79,7 @@ img {
   @include laptop() {
     width: 740px;
   }
-  @include tablet() {
+  @include laptop() {
     width: 472px;
   }  
   @include phone() {
@@ -83,13 +93,6 @@ img {
   }
 }
 
-.one-third {
-  width: 33.33333%;
-  float: left;  
-  &:first-child {
-    margin-left: 0;
-  }
-}
 
 .site-wrapper {
   width: 100%;
@@ -132,14 +135,24 @@ img {
   transform: translate(-50%, -50%);
   border-radius: 8px;
   overflow: hidden;
-  min-width: 380px;
+  width: 382px;
   box-sizing: border-box;
+  @include laptop(){
+    width: 349px;
+  }
   &_contact {
     padding: 35px 40px;
     top: 36%;
     left: 50%;
     transform: translate(-50%, -36%);
     background: rgba(244, 245, 240, .85);
+    @include laptop() {
+      top: 28%;
+      transform: translate(-50%, -28%);
+      min-width: 350px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }  
 }
 
@@ -147,6 +160,9 @@ img {
 .personal-info {
   text-align: center;
   padding: 0 65px 0 65px;
+  @include laptop(){
+    padding: 0;
+  }
   &__avatar-wrapper {
     width: 140px;
     height: 140px;
@@ -173,6 +189,9 @@ img {
 .personal-info {
   &_works-theme {
     padding-bottom: 94px;
+    @include laptop(){
+      padding-bottom: 76px;
+    }
     .personal-info__avatar-wrapper {
       margin-bottom: 26px;
     }
@@ -186,6 +205,12 @@ img {
 .personal-info {
   &_about-theme{
     padding-bottom: 90px;
+    @include laptop() {
+      padding-bottom: 75px;
+    }  
+    @include phone() {
+      padding-bottom: 60px;
+    }
     .personal-info__avatar-wrapper {
       margin-bottom: 26px;
     }
@@ -235,6 +260,14 @@ img {
     &:hover, &:focus, &:active {
       background: #497f3a;
     }
+    @include laptop(){
+      padding: 14px 27px;     
+    }
+    &:last-child{
+      @include laptop(){
+        padding-right: 26px;
+      }
+    }
   } 
 }
 
@@ -276,12 +309,22 @@ img {
 }
 .triangle_blog-theme {
    margin-top: -62px;
+   @include laptop(){
+    margin-top: 48px;
+   }
 }
 .triangle_about-theme {
    .triangle {
       &__left {
         fill: #ebefe2;
       }
+       &__right {
+        fill: #f4f5f0;
+        @include laptop() {
+          fill: #ebefe2;
+        }
+      }  
+      
    }
 }
 .triangle_works-theme {
@@ -298,24 +341,45 @@ img {
   float: left;
   width: 50%;
   background: #ebefe2;
+  @include laptop() {
+    width: 100%;
+    float: none;
+  } 
 }
 .col-right {
   float: right;
-  width: 50%;   
+  width: 50%;  
+  @include laptop() {
+    width: 100%;
+    float: none;
+  }  
 }
 .article-content {
   &__inner-wrapper {
     padding: 12px 70px 48px 70px;
+    @include laptop() {
+     padding: 46px 0 44px 0;
+    }
     &_small {
       padding: 12px 0 0 40px;
+      @include laptop() {
+        padding: 45px 0 0;
+      }
     }
   }
   &__image {
     margin-bottom: 29px;
+    @include laptop() {
+     margin-bottom: 47px;
+    }
+
   }  
   &__paragraph {
     line-height: 1.5;
-    margin-bottom: 12px;
+    margin-bottom: 12px;    
+    @include laptop() {
+      line-height: 1.8;
+    }
     &:last-child {
       margin-bottom: 0;
     }
@@ -327,6 +391,9 @@ img {
   position: relative;
   height: 974px;
   overflow: hidden;
+  @include laptop() {
+    height: 904px;
+  }
   img {
     width: 100%;
   }
@@ -340,6 +407,9 @@ img {
     margin-bottom: 16px;
     &:last-child {
       margin-bottom: 0;
+    }
+    @include laptop(){
+      font-size: 16px;
     }
   }
   &__icon {
@@ -370,12 +440,22 @@ img {
   background: #f4f5f0 url('../img/works-bottom-bg.jpg') 0 bottom no-repeat ;
   background-size: cover;
   padding-bottom: 340px;
+  @include laptop(){
+    padding-bottom: 390px;
+  }
 }
 
 
 ////////////////
 // Blog page
 ////////////////
+.container {
+  &_blog {
+    @include laptop(){
+      width: 720px;
+    }
+  }
+}
 .header {
   font-size: 0;
   color: #fff;
@@ -386,6 +466,10 @@ img {
   &_inner-page {    
     padding: 82px 0 0;  
     margin-bottom: 62px;
+    @include laptop(){
+      padding-top: 116px;
+      margin-bottom: 51px;
+    }
   }
   &_inner-page-high{
     position: relative;
@@ -393,6 +477,12 @@ img {
     background: url('../img/bg-main.jpg') center 39% no-repeat;    
     margin-bottom: 0;
     background-size: cover;
+    @include laptop() {
+      padding-top: 116px;
+    }  
+    @include phone() {
+      padding-top: 100px;
+    }
   }
    &:before {
     content: '';
@@ -418,6 +508,9 @@ img {
   position: relative;
   font: normal 63px/1 'Sansus_Webissimo-Regular', 'Roboto', sans-serif;  
   text-transform: uppercase;
+  @include laptop() {
+    font-size: 49px;    
+  }
   &:after {    
     content: '';    
     position: absolute;
@@ -437,6 +530,9 @@ img {
      &:after {
         background: #373e42;
      }
+     @include laptop() {
+      margin-bottom: 30px;
+     }
   }
   &_small {
     font-size: 35px;
@@ -447,20 +543,56 @@ img {
     &:after {
         background: #566358;
      }
+     @include laptop() {
+      font-size: 30px;
+     }
+  }
+  &_blog {
+    @include laptop(){
+      margin-bottom: 17px;
+      padding-bottom: 17px;
+    }
+   
+  }
+  &_works {
+    margin-bottom: 30px;
+    padding-bottom: 26px;    
+    @include laptop(){
+      margin-bottom: 0;
+      padding-bottom: 17px;       
+    }
   }
   &_multiline {
     max-width: 255px;
     line-height: 1.15;
     padding-bottom: 16px;    
     margin: 0 auto 34px auto;
-  }
-  &_extramargin {
-    margin-bottom: 30px;
-    padding-bottom: 26px;
-  }
+    @include laptop() {
+      max-width: 50%;
+      margin-bottom: 14px;
+    }
+  } 
   &_extramargin2 {
     margin-bottom: 25px;
     padding-bottom: 34px;
+    @include laptop() {
+      margin-bottom: 10px;
+      padding-bottom: 17px;
+    }
+  }
+  &_contact-form {
+    @include laptop() {
+      font-size: 35px;
+      padding-bottom: 26px;
+      margin-bottom: 34px;
+    }
+  }
+  &_contact {
+    @include laptop() {
+      font-size: 35px;
+      padding-bottom: 14px;
+      margin-bottom: 34px;
+    }
   }
 }
 .extra-title-wrapper {
@@ -468,17 +600,35 @@ img {
   background: #f8f9f5;
   &_no-bg{
     background:none;
+    @include laptop(){
+      padding-top: 32px;
+    }
   }
-
+  &_works {
+    @include laptop(){
+      padding-top: 41px;
+    }
+  }
+  @include laptop(){
+    padding-bottom: 30px;
+  }
 }
 
 .page-slogan {
   font: normal 16px/1 'Roboto', sans-serif;
+  &_blog {
+    @include laptop() {
+      font-size: 14px;
+    }
+  }
 }
 
 .blog-sidebar {
   width: 25.5%;
   float: left;  
+  @include laptop(){
+    display: none;
+  }
 }
 .vertica-nav {
   &__list {
@@ -513,6 +663,11 @@ img {
   margin-left: 100px;
   width: 60%;
   float: left;
+  @include laptop(){
+    width: 100%;
+    float: none;
+    margin-left: 0;
+  }
 }
 .blog-post {  
   padding-bottom: 64px;
@@ -527,16 +682,26 @@ img {
     margin: 0 0 18px 0;
     font: normal 35px/1.05 'Sansus_Webissimo-Regular', 'Roboto', sans-serif;
     color: #566358;
+    @include laptop(){
+      font-size: 30px;
+      margin-bottom: 11px;
+    }
   }
   &__date {
     display: block;
     color: #4e8839;
     margin-bottom: 17px;
+    @include laptop(){
+      margin-bottom: 8px;
+    }
   }
   &__paragraph {
     margin: 0 0 8px 0;
     &_last {
       margin-bottom: 0;
+    }
+    @include laptop() {
+      margin-bottom: 10px;
     }
   }
   &__image {
@@ -548,8 +713,44 @@ img {
 // Footer
 ///////////////
 .footer-wrapper {
-  margin-top: -182px;
+  margin-top: -186px;
   position: relative;
+  @include laptop()  {
+    font-size: 14px;
+    margin-top: -270px;
+  }
+}
+.footer-container {
+  width: 1180px;
+  margin: 0 auto;
+  overflow: hidden;
+  @include laptop(){
+    width: 100%;
+  }
+}
+.left-block {
+  width: 33.33333%;
+  float: left;
+  margin-left: 0;  
+  @include laptop(){
+    width: 50%;
+    margin-bottom: 72px;
+  }
+}
+.center-block {
+  width: 33.33333%;
+  float: left;
+  @include laptop(){
+    width: 50%;   
+  } 
+}
+.right-block {
+  width: 33.33333%;
+  float: left;
+  @include laptop(){
+    float: none;
+    width: 100%;
+  } 
 }
 .footer-simple {
   position: relative;  
@@ -557,15 +758,21 @@ img {
   z-index: 10;
   color: #fff;
   text-align: center;
+  @include laptop(){
+    font-size: 16px;
+  }
 }
 .footer-top {
   color: #ffffff;
   padding: 24px 0 20px 0;
   background: rgba(55,62,66,.85);
+  @include laptop(){
+    padding-bottom: 24px;
+  }
 }
 .footer-bottom {
   color: #ffffff;
-  padding: 4px 0;
+  padding: 6px 0;
   background: rgba(108, 156, 90, .85);
   text-align: center;
   font-weight: 300;
@@ -588,7 +795,7 @@ img {
 }
 .site-info {
   &__text {
-    font-weight: 300;
+    font-weight: 300;   
   }
 }
 
@@ -603,7 +810,7 @@ img {
   }
   &__item {
     margin-left: 15px;
-    display: inline-block;
+    display: inline-block;    
     &:first-child {
       margin-left: 0;
     }
@@ -611,6 +818,9 @@ img {
       .simple-nav__link {
         color: #4e8839;
       }
+    }
+    @include laptop(){
+     margin-left: 20px;
     }
   }
   &__link {
@@ -620,9 +830,12 @@ img {
     &:hover, &:focus {
       color: #4e8839;
     }
-     &:active {
-      opacity: .3;
-     }
+    &:active {
+     opacity: .3;
+    }
+    @include laptop(){
+      font-size: 14px;
+    }
   }
 }
 
@@ -693,6 +906,9 @@ img {
   margin: 0;
   padding: 0 0 0 12px;
   font-style: italic;
+  @include laptop(){
+    padding: 0;
+  }
   &__text {  
     font-weight: 300;
     opacity: .5;
@@ -707,8 +923,18 @@ img {
 
 
 // Extra classes
+.clear-element {
+  display: none;
+  clear: both;
+  @include laptop(){
+    display: block;
+  }
+}
 .mb50 {
   margin-bottom: 50px;
+  @include laptop() {
+    margin-bottom: 43px;
+  }
 }
 .left-bg {
   position: relative;
@@ -720,6 +946,12 @@ img {
     width: 100%;
     height: 100%;
     background-color: #ebefe2;
+    @include laptop() {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      z-index: -1;
+    }
   }
 }
 .authorize-box {

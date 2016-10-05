@@ -1,10 +1,10 @@
 footer.footer
 	.footer-top
-		.container
-			.one-third
+		.footer-container
+			.left-block
 				.separator.box-inner-wrapper.site-info
 					p.site-info__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
-			.one-third
+			.center-block
 				.separator.box-inner-wrapper
 						+nav('simple-nav', [
 			          {
@@ -32,7 +32,8 @@ footer.footer
 								+icon_link_fa('social-nav', 'github-alt', "https://github.com/")
 							li.social-nav__item
 								+icon_link_fa('social-nav', 'linkedin', "https://linkedin.com/")
-			.one-third
+			.clear-element
+			.right-block
 				.box-inner-wrapper
 					blockquote.blockquote
 						p.blockquote__text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.

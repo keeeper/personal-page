@@ -3,27 +3,46 @@
   position: relative;
   background:#ebefe2; 
   height: 750px;
+  @include laptop() {
+    height: auto;
+  }
   .slider__inner-wrapper {
      max-width: 1020px;
      margin: 0 auto;
+     @include laptop(){
+      max-width: 100%;
+     }
   }
 }
 .slide {   
   position: absolute;
   overflow: hidden;
   bottom: 0;  
+  @include laptop(){
+    width: 100%;
+    position: initial;
+    padding-top: 94px;
+  }
   &__image {
     margin-bottom: -3px;
     float: left;
+    @include laptop(){
+      float: none;
+      text-align: center;
+    }
   }
   &__project-title {
-    position: relative;    
-    margin-bottom: 25px;
+    position: relative; 
     padding-bottom: 25px;
     color: #566358;
     margin: 0 0 28px 0;
     font: normal 35px/1.1 'Sansus_Webissimo-Regular', 'Roboto', sans-serif;   
     text-transform: uppercase;
+    @include laptop(){
+      font-size: 30px;
+      padding-bottom: 14px;
+      margin-bottom: 13px;
+    }
     &:after {    
       content: '';    
       position: absolute;
@@ -33,14 +52,25 @@
       left: 0;
       bottom: 0;      
       background: #566358;
+      @include laptop(){
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
   &__project-desc {   
     padding-left: 100px;
     padding-top: 160px;
-    float: left;
+    float: right;
     display: block;
     max-width: 320px;
+    @include laptop(){
+      text-align: center;
+      float: none;
+      padding: 0;
+      margin: 0 auto 108px auto;
+      max-width: 100%;      
+    }
   } 
   &__project-link {   
     display: inline-block;
@@ -54,9 +84,16 @@
       font-size: 20px;
       margin-right: 10px;
       vertical-align: middle;
+      @include laptop(){
+        margin-right: 14px;
+      }
     }
     &:hover {
       background: #566358;      
+    }
+    @include laptop(){
+      font-size: 16px;
+      padding: 10px 20px 10px 20px;
     }
   }
 }
@@ -65,10 +102,16 @@
   padding: 0;
   color: #4e8839;  
   text-transform: uppercase;
+  @include laptop(){
+    margin-bottom: 34px;
+  }
   &__item {
     position: relative;
     display: inline-block; 
     padding-left: 5px;
+    @include laptop(){
+      font-size: 14px;
+    }
     &:after {
       content: ' , ';
       position: absolute;
@@ -89,6 +132,9 @@
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
+  @include laptop(){
+    bottom: 23px;
+  }
   &__list {
     margin: 0;
     padding: 0;
@@ -96,6 +142,9 @@
   &__item {
      display: inline-block;
      margin-left: 20px;
+     @include laptop(){
+        margin-left: 15px;
+      }
      &:first-child {
       margin-left: 0;
      }
@@ -127,9 +176,15 @@
     }
     &_left {
       left: 30px;
+      @include laptop(){
+        left: 22px;
+      }
     }
     &_right {
       right: 30px;
+      @include laptop(){
+        right: 22px;
+      }
     }
   }
 }
