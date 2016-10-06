@@ -136,6 +136,14 @@ img {
       padding-left: 20px;
       padding-right: 20px;
     }
+    @include phone(){
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      transform: none;
+      border-radius: 0;
+      padding-left: 30px;
+    }
   }  
 }
 
@@ -167,6 +175,9 @@ img {
     font-size: 16px;
     margin: 0 0 16px 0;
     padding: 0;
+    @include phone() {
+      font-size: 14px;
+    }
   }
 }
 .personal-info {
@@ -175,13 +186,23 @@ img {
     @include laptop(){
       padding-bottom: 76px;
     }
+     @include phone() {
+      padding-bottom: 172px;
+    }
     .personal-info__avatar-wrapper {
       margin-bottom: 26px;
+      @include phone() {
+        margin-bottom: 32px;
+      }
     }
     .personal-info__title {
       font-size: 35px;
       line-height: 1;
       margin-bottom: 4px;
+       @include phone() {
+        font-size: 21px;
+        margin-bottom: 8px;
+      }
     }
   }
 }
@@ -192,15 +213,22 @@ img {
       padding-bottom: 75px;
     }  
     @include phone() {
-      padding-bottom: 60px;
+      padding-bottom: 172px;
     }
     .personal-info__avatar-wrapper {
       margin-bottom: 26px;
+       @include phone() {
+        margin-bottom: 32px;
+      }
     }
     .personal-info__title {
       font-size: 35px;
       line-height: 1;
       margin-bottom: 4px;
+      @include phone() {
+        font-size: 21px;
+        margin-bottom: 8px;
+      }
     }
   }
 }
@@ -343,10 +371,16 @@ img {
     @include laptop() {
      padding: 46px 0 44px 0;
     }
+    @include phone() {
+     padding: 26px 0 28px 0;
+    }
     &_small {
       padding: 12px 0 0 40px;
       @include laptop() {
         padding: 45px 0 0;
+      }
+      @include phone() {
+        padding: 27px 0 0;
       }
     }
   }
@@ -355,6 +389,9 @@ img {
     @include laptop() {
      margin-bottom: 47px;
     }
+    @include phone() {
+     margin-bottom: 29px;
+    }
 
   }  
   &__paragraph {
@@ -362,6 +399,9 @@ img {
     margin-bottom: 12px;    
     @include laptop() {
       line-height: 1.8;
+    }   
+    @include phone() {
+      padding: 0 10px;
     }
     &:last-child {
       margin-bottom: 0;
@@ -376,6 +416,9 @@ img {
   overflow: hidden;
   @include laptop() {
     height: 904px;
+  }
+  @include laptop() {
+    height: 1140px;
   }
   img {
     width: 100%;
@@ -426,6 +469,9 @@ img {
   @include laptop(){
     padding-bottom: 390px;
   }
+  @include phone(){
+    padding-bottom: 435px;
+  }
 }
 
 
@@ -466,6 +512,9 @@ img {
     @include phone() {
       padding-top: 100px;
     }
+     @include phone(){
+      padding-top: 116px;
+    }
   }
    &:before {
     content: '';
@@ -494,6 +543,9 @@ img {
   @include laptop() {
     font-size: 49px;    
   }
+  @include phone() {
+    font-size: 35px;    
+  }
   &:after {    
     content: '';    
     position: absolute;
@@ -503,19 +555,26 @@ img {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    background: #fff;
+    background: #fff;   
+    @include laptop() {
+      width: 56px;
+    } 
   }
   &_extra {
     padding-bottom: 13px;
     color: #373e42; 
     margin-bottom: 36px;  
     text-align: center;
-     &:after {
-        background: #373e42;
-     }
-     @include laptop() {
-      margin-bottom: 30px;
-     }
+    &:after {
+       background: #373e42;
+    }
+    @include laptop() {
+     margin-bottom: 30px;
+    }
+    @include laptop() {
+      padding-bottom: 17px;
+      margin-bottom: 18px;
+    }
   }
   &_small {
     font-size: 35px;
@@ -528,6 +587,10 @@ img {
      }
      @include laptop() {
       font-size: 30px;
+     }
+     @include phone() {
+      font-size: 21px;
+      padding-bottom: 19px;
      }
   }
   &_blog {
@@ -554,6 +617,11 @@ img {
       max-width: 50%;
       margin-bottom: 14px;
     }
+    @include phone() {
+      max-width: 50%;
+      margin-bottom: 11px;
+      padding-bottom: 21px;
+    }
   } 
   &_extramargin2 {
     margin-bottom: 25px;
@@ -562,12 +630,24 @@ img {
       margin-bottom: 10px;
       padding-bottom: 17px;
     }
+    @include laptop() {
+      line-height: 1.2;
+      margin-bottom: 10px;
+      padding-bottom: 19px;
+    }
   }
   &_contact-form {
+    margin: 0 0 32px 0;
+    padding-bottom: 26px;
     @include laptop() {
       font-size: 35px;
       padding-bottom: 26px;
       margin-bottom: 34px;
+    }
+    @include phone() {
+      font-size: 21px;
+      padding-bottom: 20px;
+      margin-bottom: 18px;
     }
   }
   &_contact {
@@ -576,24 +656,35 @@ img {
       padding-bottom: 14px;
       margin-bottom: 34px;
     }
+    @include phone(){
+      margin-bottom: 21px;
+      padding-bottom: 16px;
+    }
   }
 }
 .extra-title-wrapper {
   padding: 59px 0 6px 0; 
   background: #f8f9f5;
-  &_no-bg{
-    background:none;
-    @include laptop(){
-      padding-top: 32px;
-    }
+  @include laptop(){
+    padding-bottom: 30px;
   }
   &_works {
     @include laptop(){
       padding-top: 41px;
     }
+    @include laptop(){
+      padding-top: 28px;
+      padding-bottom: 15px;
+    }   
   }
-  @include laptop(){
-    padding-bottom: 30px;
+  &_no-bg{
+    background:none;
+    @include laptop(){
+      padding-top: 32px;      
+    }
+    @include phone(){
+      padding-bottom: 15px;      
+    }
   }
 }
 
@@ -702,13 +793,21 @@ img {
     font-size: 14px;
     margin-top: -270px;
   }
+  @include laptop()  {
+    text-align: center;
+    margin-top: -342px;
+  }
 }
 .footer-container {
   width: 1180px;
   margin: 0 auto;
   overflow: hidden;
+  box-sizing: border-box;
   @include laptop(){
     width: 100%;
+  }
+  @include phone(){
+    padding: 0 10px;    
   }
 }
 .left-block {
@@ -719,6 +818,12 @@ img {
     width: 50%;
     margin-bottom: 72px;
   }
+  @include phone(){
+    width: 100%;
+    padding-bottom: 14px;
+    margin-bottom: 14px;    
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+  }
 }
 .center-block {
   width: 33.33333%;
@@ -726,6 +831,16 @@ img {
   @include laptop(){
     width: 50%;   
   } 
+  @include phone(){
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  @include phone(){
+    width: 100%;
+    padding-bottom: 14px;
+    margin-bottom: 14px;    
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+  }
 }
 .right-block {
   width: 33.33333%;
@@ -752,6 +867,10 @@ img {
   @include laptop(){
     padding-bottom: 24px;
   }
+  @include phone(){
+    padding-top: 14px;
+    padding-bottom: 16px;
+  }
 }
 .footer-bottom {
   color: #ffffff;
@@ -762,9 +881,11 @@ img {
 }
 .box-inner-wrapper {
   padding: 0 25px;
+  @include phone(){
+    padding: 0;    
+  }
 }
-.separator {
-    // border-right: 1px solid rgba(255, 255, 255, .2);
+.separator {    
     position: relative;
     &:after {
       content: '';
@@ -774,6 +895,9 @@ img {
       right: 0;
       top: 4px;
       background: rgba(255, 255, 255, .2);
+      @include phone(){
+        display: none;
+      }
     }
 }
 .site-info {
@@ -805,6 +929,9 @@ img {
     @include laptop(){
      margin-left: 20px;
     }
+    @include phone(){
+     margin-left: 11px;
+    }
   }
   &__link {
     font-size: 16px;
@@ -827,11 +954,17 @@ img {
   &__list {    
     margin: 0;
     padding: 0;
-    font-size: 28px;    
+    font-size: 28px;
+    @include phone(){
+      font-size: 20px;
+    }
   }  
   &__item{
     display: inline-block;
     margin-left: 22px;
+    @include phone(){
+      margin-left: 26px;
+    }
     &:first-child {
       margin-left: 0;
     }
@@ -881,6 +1014,10 @@ img {
       margin-bottom: 0;
       left: 30px;
       top: 18px;
+      @include phone(){
+        top: 8px;
+        left: 12px;
+      }
     }  
   }
 }
@@ -917,6 +1054,9 @@ img {
   margin-bottom: 50px;
   @include laptop() {
     margin-bottom: 43px;
+  }
+  @include phone() {
+    margin-bottom: 28px;
   }
 }
 .left-bg {

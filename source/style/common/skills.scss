@@ -2,13 +2,20 @@
 .skills {
   &-inner-wrapper {
     margin-bottom: 29px;
+   
     &:last-child{
       @include laptop() {
         margin-bottom: 54px;      
-      }  
+      } 
+      @include phone(){
+        margin-bottom: 0;
+      }
     }
     @include laptop() {
       margin-bottom: 44px;      
+    } 
+    @include phone() {
+      margin-bottom: 0;      
     }
   }
   &__list-title {
@@ -34,6 +41,9 @@
     margin-left: 31px;
     @include laptop() {
       margin-left: 6px;
+    }
+    @include laptop() {
+      margin-bottom: 28px;
     }
     &:first-child {
       margin-left: 0;

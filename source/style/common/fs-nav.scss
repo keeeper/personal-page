@@ -21,6 +21,10 @@
 	    top: 28px;
 	    right: 30px;
    		display: block;
+   		 @include phone(){
+		     top: 8px;
+		     right: 12px;
+	     }
    		
    		&_hide {
    			display: none;
@@ -34,6 +38,9 @@
 	    color: #fff;
 	    font-size: 48px;
 	    line-height: 1;
+	     @include phone(){
+		      font-size: 30px;
+		   }
 	  }
 	}
 	// Close button
@@ -50,11 +57,18 @@
 		margin: 0;
 		font: normal 63px/1 'Sansus_Webissimo-Regular', 'Roboto', sans-serif;	
 		text-align: center;
+		@include phone() {
+			font-size: 35px;
+		}
 	}
 	&__item {
 		position: relative;
 		padding-bottom: 29px;
 		margin-bottom: 50px;
+		@include phone() {
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+		}
 		&_active {		
 			&:after {
 	      content: '';

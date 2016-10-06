@@ -2,13 +2,22 @@
   @include laptop(){
     width: 720px;
   }
+  @include phone(){
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
 }
 .testimonials {
   max-width: 780px;
-  margin: 0 auto 60px auto;
+  margin: 0 auto 70px auto;
   overflow: hidden;
   @include laptop(){
     margin-bottom: 46px;
+  }
+  @include phone(){
+    max-width: 100%;
+    margin-bottom: 0;
   }
 }
 .testimonial {
@@ -21,8 +30,15 @@
     width: 350px;
     font-size: 14px;
   }
+  @include phone(){
+    width: 100%;
+    margin-bottom: 32px;
+  }
   &:last-child {
     margin-left: 20px;
+    @include phone(){
+      margin-left: 0;
+    }
   }
   &__image-wrapper {   
     display: inline-block;
@@ -31,6 +47,10 @@
     border-radius: 50%;
     overflow: hidden;
     margin-bottom: 8px;
+    @include phone(){
+      width: 51px;
+      height: 51px;
+    }
   }
   &__text{
     position: relative;
@@ -61,5 +81,9 @@
   &__footer {
     font-size: 16px;
     line-height: 1.4;
+    @include phone(){
+      font-size: 14px;
+      line-height: 1.7;
+    }
   }
 }
