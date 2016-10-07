@@ -867,9 +867,10 @@ img {
 ///////////////
 // Footer
 ///////////////
-.footer-wrapper {
-  margin-top: -186px;
-  position: relative;
+.footer-wrapper {    
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   @include laptop()  {
     font-size: 14px;  
   }
@@ -877,22 +878,23 @@ img {
     text-align: center;  
   }
   &_about {
-    @include laptop()  {
-      margin-top: -247px;
-    }
-    @include phone()  {
-      margin-top: -300px;
-    }
+    // @include laptop()  {
+    //   margin-top: -247px;
+    // }
+    // @include phone()  {
+    //   margin-top: -300px;
+    // }
   }
   &_works {
-    @include laptop() {
-      margin-top: -247px;
-    }
-    @include phone()  {
-      margin-top: -300px;
-    }
+    // @include laptop() {
+    //   margin-top: -247px;
+    // }
+    // @include phone()  {
+    //   margin-top: -300px;
+    // }
   }
   &_blog {
+    position: relative;
     margin-top: 0;
   }
 }
