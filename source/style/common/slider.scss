@@ -7,15 +7,18 @@
     height: auto;
   }
   .slider__inner-wrapper {
-     max-width: 1020px;
+     max-width: 1090px;
      margin: 0 auto;
+     @include desktop() {
+        max-width: 1020px;
+     }
      @include laptop(){
       max-width: 100%;
      }
   }
 }
 .slide {   
-  position: absolute;
+  position: relative;
   overflow: hidden;
   bottom: 0;  
   @include laptop(){
@@ -27,14 +30,16 @@
     padding-top: 30px;
   }
   &__image {
-    margin-bottom: -3px;
+    margin-top: 47px;
     float: left;
     @include laptop(){
+      margin-top: 0;
+      margin-bottom: -3px;  
       float: none;
       text-align: center;
     }
     @include phone(){
-      height: 320px
+      height: 320px;
     }
   }
   &__project-title {
@@ -74,7 +79,6 @@
     }
   }
   &__project-desc {   
-    padding-left: 100px;
     padding-top: 160px;
     float: right;
     display: block;
