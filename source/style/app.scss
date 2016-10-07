@@ -12,7 +12,8 @@ html, body {
 html {
   box-sizing: border-box;
 }
-*, *{
+* {
+  box-sizing: border-box;
   &:before, &:after {
     box-sizing: border-box;
   }
@@ -28,8 +29,8 @@ body {
   @include laptop() {
     font-size: 15px;
   }
-  @include laptop() {
-    font-size: 13px;
+  @include tablet() {
+    font-size: 14px;
   }  
   @include phone() {
     font-size: 13px;
@@ -78,10 +79,10 @@ img {
   }
   @include laptop() {
     width: 740px;
-  }
-  @include laptop() {
-    width: 472px;
   }  
+  @include tablet() {
+    width: 472px;
+  }
   @include phone() {
     width: 100%;
   }
@@ -122,6 +123,9 @@ img {
   box-sizing: border-box;
   @include laptop(){
     width: 349px;
+  }
+  @include phone(){
+    width: 300px;
   }
   &_contact {
     padding: 35px 40px;
@@ -169,6 +173,9 @@ img {
     padding: 0;
     font-weight: 500;
     font-size: 28px;
+    @include phone(){
+      font-size: 21px;
+    }
   }
   &__tagline {
     font-weight: 400;
@@ -255,8 +262,18 @@ img {
       top: 0;
       background: rgba(255, 255, 255, .5);
     }
-    &:last-child:after {
-      display: none;
+    &:last-child{
+      .main-nav__link {
+        @include laptop(){
+         padding-right: 24px;
+        }
+        @include phone(){
+         padding-right: 20px;
+        }
+      }
+      &:after {
+        display: none;
+      }      
     }
   }
   &__link {
@@ -272,12 +289,10 @@ img {
       background: #497f3a;
     }
     @include laptop(){
-      padding: 14px 27px;     
-    }
-    &:last-child{
-      @include laptop(){
-        padding-right: 26px;
-      }
+      padding: 14px 27px;    
+    } 
+    @include phone(){
+      padding: 14px 18px;
     }
   } 
 }
@@ -300,6 +315,11 @@ img {
   &:hover {
     background: #fff;
     color: #467c37;
+  }
+  @include phone(){
+    left: 50%;
+    right: initial;
+    transform: translateX(-50%);
   }
 }
 
@@ -482,7 +502,11 @@ img {
   &_blog {
     @include laptop(){
       width: 720px;
-    }
+    }  
+    @include tablet(){
+      width: 100%;
+      padding: 0 10px;
+    }     
   }
 }
 .header {
@@ -747,6 +771,14 @@ img {
   padding-bottom: 64px;
   margin-bottom: 64px;
   border-bottom: 5px solid rgba(55, 62, 66, .07);
+  @include tablet(){
+    padding-bottom: 48px;
+    margin-bottom: 48px;
+  }
+  @include phone(){
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+  }
   &:last-child {
     border: none;
     margin-bottom: 0;
@@ -758,6 +790,10 @@ img {
     color: #566358;
     @include laptop(){
       font-size: 30px;
+      margin-bottom: 11px;
+    }
+    @include phone(){
+      font-size: 21px;
       margin-bottom: 11px;
     }
   }
@@ -790,20 +826,35 @@ img {
   margin-top: -186px;
   position: relative;
   @include laptop()  {
-    font-size: 14px;
-    margin-top: -270px;
+    font-size: 14px;  
   }
-  @include laptop()  {
-    text-align: center;
-    margin-top: -342px;
+  @include phone()  {
+    text-align: center;  
+  }
+  &_about {
+    @include laptop()  {
+      margin-top: -247px;
+    }
+    @include phone()  {
+      margin-top: -300px;
+    }
+  }
+  &_works {
+    @include laptop() {
+      margin-top: -247px;
+    }
+    @include phone()  {
+      margin-top: -300px;
+    }
+  }
+  &_blog {
+    margin-top: 0;
   }
 }
 .footer-container {
-  width: 1180px;
-  margin: 0 auto;
-  overflow: hidden;
-  box-sizing: border-box;
-  @include laptop(){
+  width: 100%;  
+  overflow: hidden;  
+  @include desktop(){
     width: 100%;
   }
   @include phone(){
@@ -859,6 +910,9 @@ img {
   @include laptop(){
     font-size: 16px;
   }
+  @include phone(){
+    font-size: 14px;
+  }
 }
 .footer-top {
   color: #ffffff;
@@ -903,6 +957,7 @@ img {
 .site-info {
   &__text {
     font-weight: 300;   
+    max-width: 400px;
   }
 }
 
@@ -926,6 +981,9 @@ img {
         color: #4e8839;
       }
     }
+    @include desktop(){
+     margin-left: 8px;
+    }
     @include laptop(){
      margin-left: 20px;
     }
@@ -943,7 +1001,7 @@ img {
     &:active {
      opacity: .3;
     }
-    @include laptop(){
+    @include desktop(){
       font-size: 14px;
     }
   }
@@ -1079,6 +1137,9 @@ img {
 }
 .authorize-box {
   display: none;
+}
+.personal-info-box{
+ // display: none;
 }
 @import 'common/fullwidth-background';
 @import 'common/slider';

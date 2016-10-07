@@ -1,5 +1,4 @@
 // Authorize block
-
 .authorize {  
   &__title {
     position: relative;
@@ -46,6 +45,9 @@
         margin: 0 auto 16px auto;
         width: 104px;
         overflow: hidden;
+        @include tablet(){
+          width: 90px;
+        }
       }
       &-title {
         float: right;
@@ -69,15 +71,29 @@
       padding: 10px 17px;
       border-top-right-radius: 30px;
       border-bottom-right-radius: 30px;
+      @include laptop(){
+        width: 262px;
+        padding: 13px 17px 12px 17px;
+      }
+      @include phone(){
+        width: 220px;
+      }
     }
     &__icon {
       font-size: 18px;
       color: #c4cbcd;
-      &-wrapper  {
+      &-wrapper  {               
         background: #f0efe9;
         padding: 13px 16px 14px 14px;
         border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px;         
+        border-bottom-left-radius: 30px;
+        width: 45px;
+        height: 46px;
+        display: inline-block;
+        font-size: 0;
+         @include phone(){
+          width: 40px;
+         }
       }
     }
     &__radio {
