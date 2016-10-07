@@ -181,9 +181,6 @@ img {
     font-size: 16px;
     margin: 0 0 16px 0;
     padding: 0;
-    @include desktop-hd() {
-      margin-bottom: -25px;
-    }
     @include phone() {
       font-size: 14px;
     }
@@ -364,9 +361,11 @@ img {
         @include laptop() {
           fill: #ebefe2;
         }
-      }  
-      
-   }
+      } 
+   }   
+    @include desktop-hd() {
+      margin-top: -42px;
+    }
 }
 .triangle_works-theme {
    .triangle {
@@ -376,6 +375,9 @@ img {
       &__right {
         fill: #f8f9f5;
       }
+   }
+   @include desktop-hd() {
+     margin-top: -42px;
    }
 }
 .col-left {
@@ -466,8 +468,9 @@ img {
   @include laptop() {
     height: 1140px;
   }
-  img {
-    width: 100%;
+  img {    
+    width: 100%;    
+    height: 100%;
   }
 }
 
@@ -878,20 +881,8 @@ img {
     text-align: center;  
   }
   &_about {
-    // @include laptop()  {
-    //   margin-top: -247px;
-    // }
-    // @include phone()  {
-    //   margin-top: -300px;
-    // }
   }
   &_works {
-    // @include laptop() {
-    //   margin-top: -247px;
-    // }
-    // @include phone()  {
-    //   margin-top: -300px;
-    // }
   }
   &_blog {
     position: relative;
