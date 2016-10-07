@@ -86,7 +86,6 @@ img {
   @include phone() {
     width: 100%;
   }
-
   &:after {
     content: '';
     display: table;
@@ -182,6 +181,9 @@ img {
     font-size: 16px;
     margin: 0 0 16px 0;
     padding: 0;
+    @include desktop-hd() {
+      margin-bottom: -25px;
+    }
     @include phone() {
       font-size: 14px;
     }
@@ -330,6 +332,14 @@ img {
 // About page
 ////////////////
 
+.container {
+  &_about{
+    @include desktop-hd(){
+      width: 1680px;
+    }
+  }
+}
+
 .triangle {  
   &__left {
     fill: #f4f5f0;
@@ -388,6 +398,10 @@ img {
 .article-content {
   &__inner-wrapper {
     padding: 12px 70px 48px 70px;
+    overflow: hidden;
+    @include desktop-hd() {
+     padding: 7px 20px 108px 70px;
+    }
     @include laptop() {
      padding: 46px 0 44px 0;
     }
@@ -396,12 +410,24 @@ img {
     }
     &_small {
       padding: 12px 0 0 40px;
+      @include desktop-hd() {
+        padding: 7px 0 0 40px;
+      }
       @include laptop() {
         padding: 45px 0 0;
       }
       @include phone() {
         padding: 27px 0 0;
       }
+    }
+  }
+  &__extra-wrapper {
+    float: left;
+  }
+  &_column {
+    @include desktop-hd() {
+      width: 440px;
+      float: right;
     }
   }
   &__image {
@@ -500,6 +526,9 @@ img {
 ////////////////
 .container {
   &_blog {
+    @include desktop-hd(){
+      width: 1576px;
+    } 
     @include laptop(){
       width: 720px;
     }  
@@ -598,6 +627,11 @@ img {
     @include laptop() {
       padding-bottom: 17px;
       margin-bottom: 18px;
+    }
+  }
+  &_column {
+    @include desktop-hd(){
+      float: left;
     }
   }
   &_small {
@@ -715,6 +749,9 @@ img {
 .page-slogan {
   font: normal 16px/1 'Roboto', sans-serif;
   &_blog {
+    @include desktop-hd() {
+      margin-bottom: -29px;
+    }
     @include laptop() {
       font-size: 14px;
     }
@@ -724,11 +761,14 @@ img {
 .blog-sidebar {
   width: 25.5%;
   float: left;  
+  @include desktop-hd(){
+    width: 280px;
+  }
   @include laptop(){
     display: none;
   }
 }
-.vertica-nav {
+.vertical-nav {
   &__list {
     padding: 0;
     margin: 0;
@@ -739,7 +779,7 @@ img {
     padding: 5px 0;
     margin: 0;
     &_active {
-      .vertica-nav__link {
+      .vertical-nav__link {
         color: #4e8839;
         font-weight: 700;      
         border-right: 3px solid #4e8839; 
@@ -761,6 +801,11 @@ img {
   margin-left: 100px;
   width: 60%;
   float: left;
+  @include desktop-hd(){
+    margin-left: 116px;
+    width: 980px;    
+    float: left;
+  }
   @include laptop(){
     width: 100%;
     float: none;
