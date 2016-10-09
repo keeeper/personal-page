@@ -13,24 +13,18 @@
     width: 890px;
   }
   @include laptop() {
-    width: 760px;
-    height: 1020px;
+    width: 510px;
+    height: 1015px;
+  }
+  @include phone() {
+    width: 250px;
+    height: 570px;
   }
   .slider__inner-wrapper {
-     // max-width: 1090px;
-     // margin: 0 auto;
      width: 5000px;
      transition: all .4s;
      left: 0;
      position: relative;
-
-
-     // @include desktop() {
-     //    max-width: 1020px;
-     // }
-     // @include laptop(){
-     //  max-width: 100%;
-     // }
   }
 }
 .slide {   
@@ -41,12 +35,13 @@
     width: 890px;
   }
   @include laptop(){
-    width: 100%;
-    position: initial;
+    width: 510px;
     padding-top: 94px;
-    height: 1020px;
-  }
-  @include phone(){    
+    height: 1015px;
+  }  
+  @include phone(){  
+    width: 250px;  
+    height: 570px;
     padding-top: 30px;
   }
   &__image {
