@@ -106,26 +106,26 @@ img {
     margin-bottom: 0;
   }
 }
-
-.st-box {
+.st-box-wrapper {
   position: absolute;
   top: 50%;
-  left: 50%;
-  padding: 40px 0 0;
-  color: #ffffff;
-  text-align: center;
-  background: rgba(18, 38, 32, .6);
+  left: 50%;  
   transform: translate(-50%, -50%);
-  border-radius: 8px;
-  overflow: hidden;
   width: 382px;
-  box-sizing: border-box;
   @include laptop(){
     width: 349px;
   }
   @include phone(){
     width: 300px;
   }
+}
+.st-box {
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 40px 0 0;
+  color: #ffffff;
+  text-align: center;
+  background: rgba(18, 38, 32, .6);
   &_contact {
     padding: 35px 40px;
     top: 36%;
@@ -244,6 +244,7 @@ img {
 .main-nav {  
   font-size: 0;
   text-align: justify;
+
   &__list {
     padding: 0;
     margin: 0;
@@ -309,11 +310,17 @@ img {
   color: #fff;
   z-index: 1;
   display: block;
+  opacity: 1;
+  visibility: visible;
   text-decoration: none;
-  transition: color, background .2s;
+  transition: all .2s;
   &:hover {
     background: #fff;
     color: #467c37;
+  }
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
   }
   @include phone(){
     left: 50%;
@@ -322,6 +329,35 @@ img {
   }
 }
 
+// Flip
+.flip-container { 
+  transition: all .3s ease;    
+  perspective: 800px;
+}
+
+.flip-card {
+  width: 382px;
+  height: 409px;  
+  transition: transform .5s;  
+  transform-style: preserve-3d;
+  &.flipped {
+    transform: rotateY( 180deg );
+    z-index: 10;
+  }
+  .flip-card {
+    &__front, &__back {
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;      
+      backface-visibility: hidden;
+    }
+    &__back {
+      width: 100%;
+      transform: rotateY( 180deg );
+    }
+  }
+}
 
 
 
@@ -1090,7 +1126,7 @@ img {
 // Social Green Transparent
 .social-nav {
   &-wrapper {
-    margin-bottom: 30px;
+    margin-bottom: 45px;
     &_theme-transp-green {
       .social-nav__link {
         opacity: .5;
@@ -1186,3 +1222,4 @@ img {
 @import 'common/testimonials';
 @import 'common/contact-form';
 @import 'common/fs-nav';
+

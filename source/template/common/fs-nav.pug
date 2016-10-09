@@ -1,15 +1,11 @@
 .fs-nav
-	.fs-nav__toggle-button
-		a(class="fs-nav__toggle-link" href="#")
-			.fs-nav__toggle-icon
-				+icon_fa("fs-nav", "bars")
-	.fs-nav__menu
-		.fs-nav__toggle-button
-			a(class="fs-nav__toggle-link" href="#")
-				.fs-nav__toggle-icon
-					+icon_fa("fs-nav", "times")
-		.fs-nav-inner-wrapper
-			+nav('fs-nav', [
+  .fs-nav__toggle-button
+    span
+    span
+    span
+  .fs-nav__menu
+    .fs-nav-inner-wrapper
+      +nav('fs-nav', [
           {
             name: "Мои работы",
             link: "works.html"
@@ -26,4 +22,4 @@
           	name: "Авторизация",
           	link: "index.html"
           }
-      ])  
+      ])

@@ -3,7 +3,7 @@
 	top: 0;
 	right: 0;
 	z-index: 1;
-	&__menu {
+	&__menu {		
 		display: none;
 		position: fixed;
 		top: 0;
@@ -12,39 +12,71 @@
 		bottom: 0;
 		background: rgba(108, 156, 90, .87);		
 		width: 100vw;
-		height: 100vh;
+		height: 100vh;		
+		transition: .5s ease-in-out;
+		// Toggle menu
+		&.open { 
+			display: block;
+		}
 	}
-	// Open button
+	// Toggle button animated
 	&__toggle {
     &-button {
 			position: absolute;
-	    top: 28px;
+	    top: 34px;
 	    right: 30px;
    		display: block;
-   		 @include phone(){
-		     top: 8px;
-		     right: 12px;
-	     }
-   		
-   		&_hide {
-   			display: none;
-   		}
-   		&_show {
-   			display: block;
-   		}
+			width: 40px;
+		  height: 35px;		  
+		  transform: rotate(0deg);		  
+		  transition: .4s ease-in-out;
+		  cursor: pointer;
+		  z-index: 2;
+		  span {
+				display: block;
+				position: absolute;
+				height: 4px;
+				width: 100%;
+				background: #fff;
+				border-radius: 9px;
+				opacity: 1;
+				left: 0;				
+				transform: rotate(0deg);				
+				transition: .25s ease-in-out;
+				&:nth-child(1) {
+				  top: 0px;
+				}
+				&:nth-child(2) {
+				  top: 15px;
+				}
+				&:nth-child(3) {
+				  top: 30px;
+				}
+		  }
+		  // Button animation
+		  &.open {
+				span {
+					&:nth-child(1){
+					  top: 15px;
+					  transform: rotate(135deg);
+					}
+					&:nth-child(2){
+					  opacity: 0;
+				  	left: -60px;
+					}
+					&:nth-child(3){
+					  top: 15px;					  
+					  transform: rotate(-135deg);
+					}
 
-	  }
-	  &-icon {
-	    color: #fff;
-	    font-size: 48px;
-	    line-height: 1;
-	     @include phone(){
-		      font-size: 30px;
-		   }
-	  }
+				} 
+		  }	
+ 		 @include phone(){
+	     top: 8px;
+	     right: 12px;
+     }
+	  }	  
 	}
-	// Close button
-
 
 	&-inner-wrapper {
 		position: absolute;
