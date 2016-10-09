@@ -826,6 +826,7 @@ img {
       background: inherit;
       cursor:pointer;
       border-radius: 50%;
+      transform: translateY(-50%);
     }
     &_active {
       transform: translateX(284px);

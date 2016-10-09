@@ -53,6 +53,16 @@
 				  top: 30px;
 				}
 		  }
+		  &:hover {
+				span {
+					&:nth-child(1){
+					  top: 5px;					  
+					}
+					&:nth-child(3){
+					  top: 25px;					  
+					}
+				}
+		  }
 		  // Button animation
 		  &.open {
 				span {
@@ -68,7 +78,6 @@
 					  top: 15px;					  
 					  transform: rotate(-135deg);
 					}
-
 				} 
 		  }	
  		 @include phone(){

@@ -1,30 +1,50 @@
 // Slider
 .slider {
-  position: relative;
-  background:#ebefe2; 
+  &-wrapper {
+    background:#ebefe2; 
+    position: relative;
+  }
+  position: relative;  
   height: 750px;
+  overflow: hidden;
+  width: 1090px;  
+  margin: 0 auto;
+  @include desktop() {
+    width: 890px;
+  }
   @include laptop() {
-    height: auto;
+    width: 760px;
+    height: 1020px;
   }
   .slider__inner-wrapper {
-     max-width: 1090px;
-     margin: 0 auto;
-     @include desktop() {
-        max-width: 1020px;
-     }
-     @include laptop(){
-      max-width: 100%;
-     }
+     // max-width: 1090px;
+     // margin: 0 auto;
+     width: 5000px;
+     transition: all .4s;
+     left: 0;
+     position: relative;
+
+
+     // @include desktop() {
+     //    max-width: 1020px;
+     // }
+     // @include laptop(){
+     //  max-width: 100%;
+     // }
   }
 }
 .slide {   
   position: relative;
-  overflow: hidden;
-  bottom: 0;  
+  float: left;
+  width: 1090px;
+  @include desktop() {
+    width: 890px;
+  }
   @include laptop(){
     width: 100%;
     position: initial;
     padding-top: 94px;
+    height: 1020px;
   }
   @include phone(){    
     padding-top: 30px;
