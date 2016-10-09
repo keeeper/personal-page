@@ -127,6 +127,9 @@ img {
   text-align: center;
   background: rgba(18, 38, 32, .6);
   &_contact {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
     padding: 35px 40px;
     top: 36%;
     left: 50%;
@@ -334,7 +337,6 @@ img {
   transition: all .3s ease;    
   perspective: 800px;
 }
-
 .flip-card {
   width: 382px;
   height: 409px;  
@@ -358,7 +360,6 @@ img {
     }
   }
 }
-
 
 
 ////////////////
@@ -798,13 +799,37 @@ img {
 }
 
 .blog-sidebar {
-  width: 25.5%;
+  width: 300px;
   float: left;  
-  @include desktop-hd(){
+  &_fixed {
+    position: fixed;
+    top: 0;
+  } 
+  @include desktop-hd {
     width: 280px;
   }
   @include laptop(){
-    display: none;
+    position: fixed;
+    top: 0;
+    background: #6c9c5a;
+    left: -300px;
+    height: 100%;
+    z-index: 1;
+    transition: all .4s;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -12px;
+      width: 48px;
+      height: 48px;
+      background: inherit;
+      cursor:pointer;
+      border-radius: 50%;
+    }
+    &_active {
+      transform: translateX(284px);
+    }
   }
 }
 .vertical-nav {
@@ -812,7 +837,12 @@ img {
     padding: 0;
     margin: 0;
     width: 100%;
-    text-align: right;    
+    text-align: right;
+    font-size: 16px;
+    @include laptop() {
+      width: 260px;
+      float: right;
+    }
   }
   &__item {
     padding: 5px 0;
@@ -822,6 +852,11 @@ img {
         color: #4e8839;
         font-weight: 700;      
         border-right: 3px solid #4e8839; 
+        @include laptop() {
+          border:none;
+          color: #fff;
+          opacity: 1;
+        }
       }
     }
   }
@@ -830,31 +865,45 @@ img {
     color: #566358;
     text-decoration: none;
     display: block;
+    @include laptop() {  
+      color: #fff;    
+      opacity: .7;
+    }
     &:hover {
       color: #4e8839;
+      @include laptop() {      
+        color: #fff;
+        opacity: 1;
+      }
     }       
   }
 }
 
 .blog-posts {
-  margin-left: 100px;
-  width: 60%;
-  float: left;
-  @include desktop-hd(){
-    margin-left: 116px;
-    width: 980px;    
-    float: left;
+  width: 780px;
+  float: right;
+  @include desktop-hd(){    
+    width: 1180px;    
+  }
+  @include desktop(){
+    width: 600px;
   }
   @include laptop(){
     width: 100%;
     float: none;
-    margin-left: 0;
   }
 }
-.blog-post {  
+.blog-post {
+  width: 660px;
   padding-bottom: 64px;
   margin-bottom: 64px;
   border-bottom: 5px solid rgba(55, 62, 66, .07);
+  @include desktop-hd(){
+    width: 883px;
+  }
+  @include desktop(){
+    width: 100%;
+  }
   @include tablet(){
     padding-bottom: 48px;
     margin-bottom: 48px;
