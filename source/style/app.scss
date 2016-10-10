@@ -337,11 +337,13 @@ img {
   transition: all .3s ease;    
   perspective: 800px;
 }
-.flip-card {
-  width: 382px;
+.flip-card {  
   height: 409px;  
   transition: transform .5s;  
   transform-style: preserve-3d;
+  @include phone(){
+    height: 400px;
+  }
   &.flipped {
     transform: rotateY( 180deg );
     z-index: 10;

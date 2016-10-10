@@ -73,10 +73,15 @@
       border-bottom-right-radius: 30px;
       @include laptop(){
         width: 262px;
-        padding: 13px 17px 12px 17px;
+        padding: 11px 17px 11px 17px;
+      }
+       @include tablet(){
+        width: 262px;
+        padding: 12px 17px 11px 17px;
       }
       @include phone(){
         width: 220px;
+        padding: 13px 17px 12px 17px;
       }
     }
     &__icon {

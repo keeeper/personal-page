@@ -1,6 +1,8 @@
 section(class="contact-form-wrapper")
 	h4(class="page-title page-title_small page-title_extramargin page-title_contact-form") Связаться со мной
-	form(class="contact-form" action="#" method="POST")
+	form(class="contact-form" id="contact-form")
+		.contact-form__error-message
+			.contact-form__success-message
 		.contact-form__inner-wrapper
 			.contact-form__field-wrapper
 				input(type="text" name="name" class="contact-form__input" placeholder="Имя")
@@ -9,5 +11,5 @@ section(class="contact-form-wrapper")
 			.contact-form__field-wrapper
 				textarea(name="message" class="contact-form__textarea" placeholder="Ваше сообщение")
 		.contact-form__buttons
-			button(type="submit" class="contact-form__button") Отправить
+			button(type="submit" class="contact-form__button contact-form__button-submit") Отправить
 			button(type="reset" class="contact-form__button") Очистить
