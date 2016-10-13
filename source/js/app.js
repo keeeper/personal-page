@@ -117,19 +117,18 @@ function Slider(){
 			list.css('left', "-=" + reqPos + 'px');
 
 			function removeActiveClass(reqSlide) {
-				reqSlide.addClass('slide_active').siblings().removeClass('slide_active');
-			
+				reqSlide.addClass('slide_active').siblings().removeClass('slide_active');			
 			}
 
 			function findReqPos(slide) {
-				reqPos = slide.offset().left - sliderOffset;
-				
+				reqPos = slide.offset().left - sliderOffset;				
 			}
 		});
 
+
 		function createDots(){
 			var $this = $(this),					
-					dotMarkup = '<li class="pagination__item"><a class="pagination__link" href="#"></a></li>';					
+					dotMarkup = '<li class="pagination__item"></li>';					
 			container.each(function(){
 				for(var i=0; i<items.size(); i++){
 					$('.pagination__list').append(dotMarkup);
@@ -139,15 +138,17 @@ function Slider(){
 
 		createDots();
 		setActiveDot();
+
 		function setActiveDot(){				
-				$('.pagination__item')
-					.eq(items.filter('.slide_active').index())					
-					.addClass('pagination__item_active')
-					.siblings()					
-					.removeClass('pagination__item_active');			
-		}		
+			$('.pagination__item')
+				.eq(items.filter('.slide_active').index())					
+				.addClass('pagination__item_active')
+				.siblings()					
+				.removeClass('pagination__item_active');			
+		}	
 
 	}
+
 	return {
 		init: init
 	}
@@ -189,6 +190,34 @@ function Form(){
 }
 
 
+var blur = (function(){
+    var 
+	    blur = $('.contact-form-blur-bg'),
+	    blurSection = $('.content-bottom');	    
+
+	return {
+		set : function () {
+
+			var
+				imgWidth = $('.blur-bg').width(),
+				posLeft = blurSection.offset().left - blur.offset().left,
+				posTop = blurSection.offset().top - blur.offset().top;
+
+			console.log('ssss');
+			blur.css({
+				'background-size' : imgWidth + 'px' + ' ' + 'auto',
+				'background-position' : posLeft + 'px' + ' ' + posTop + 'px'
+			})
+		}
+	}
+}());
+
+$(window).resize(function(){
+	if($('.contact-form-blur-bg').length){
+		blur.set();
+	}
+
+});
 $(document).ready(function(){
 	var fsmenu = fsMenu().init(),
 			flipcard = flipCard().init(),
@@ -197,4 +226,8 @@ $(document).ready(function(){
 	if($('.blog-sidebar').length){
 		var blogscroll = BlogScroll().init();
 	}
+	if($('.contact-form-blur-bg').length){
+		blur.set();
+	}
 });
+

@@ -189,31 +189,25 @@
   &__item {
      display: inline-block;
      margin-left: 20px;
-     @include laptop(){
-        margin-left: 15px;
-      }
-     &:first-child {
-      margin-left: 0;
-     }
-     &_active {
-        .pagination {
-          &__link {            
-             background: #6c9c5a;
-          }
-        }
-     }
-  }
-  &__link {
-    display: block;
     width: 9px;
     height: 9px;
     border-radius: 50%;
     background: #fff;
     border: 2px solid #6c9c5a;  
     transition: background .2s; 
+    cursor: pointer;
     &:hover{
       background: #6c9c5a;
     }    
+    @include laptop(){
+      margin-left: 15px;
+    }
+    &:first-child {
+    margin-left: 0;
+    }
+    &_active {
+     background: #6c9c5a;
+    }
   }
 }
 .navigation {

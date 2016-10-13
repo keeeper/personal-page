@@ -3,17 +3,27 @@
   padding: 34px 0 0;
   color: #ffffff;
   text-align: center;
-  background: rgba(224, 224, 220, .6);
+  // background: rgba(224, 224, 220, .6);
   border-radius: 8px;
   overflow: hidden;
   max-width: 380px;
   box-sizing: border-box;
+  position: relative;
   @include laptop(){
     max-width: 350px;
   }
   @include phone(){
     padding-top: 37px;
   }
+}
+.contact-form-blur-bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #f4f5f0 url('../img/works-bottom-bg.jpg') 0 bottom no-repeat;  
+  z-index: -1;
+  filter: blur(12px);
+  background-size: 1800px auto;
 }
 .contact-form { 
   &__inner-wrapper {
