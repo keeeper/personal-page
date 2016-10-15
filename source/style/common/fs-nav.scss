@@ -4,19 +4,60 @@
 	right: 0;
 	z-index: 1;
 	&__menu {		
-		display: none;
 		position: fixed;
-		top: 0;
 		left: 0;
-		right: 0;
+		top: 0;
 		bottom: 0;
-		background: rgba(108, 156, 90, .87);		
-		width: 100vw;
-		height: 100vh;		
-		transition: .5s ease-in-out;
+		right: 0;
+		opacity: 0;
+		visibility: hidden;		
+
 		// Toggle menu
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -50%;
+			width: 50%;
+			height: 100%;
+			background: rgba(108, 156, 90, .87);		
+			z-index: -1;
+			
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: -50%;
+			width: 50%;
+			height: 100%;		
+			background: rgba(108, 156, 90, .87);		
+			z-index: -1;			
+		}
 		&.open { 
-			display: block;
+			visibility: visible;
+			opacity: 1;
+			&:before {
+				transition: .4s ease;	
+				left: 0;
+			}
+			&:after {
+				transition: .4s ease;	
+				right: 0;
+			}
+			.fs-nav__item {
+				animation: fadeInScale .5s ease-in-out forwards;    
+	   		animation-delay: .2s;
+	   		&:nth-child(2) {
+	   			animation-delay: .3s;
+	   		}
+	   		&:nth-child(3) {
+	   			animation-delay: .4s;
+	   		}
+	   		&:nth-child(4) {
+	   			animation-delay: .5s;
+	   		}
+			}
 		}
 	}
 	// Toggle button animated
@@ -51,16 +92,6 @@
 				}
 				&:nth-child(3) {
 				  top: 30px;
-				}
-		  }
-		  &:hover {
-				span {
-					&:nth-child(1){
-					  top: 5px;					  
-					}
-					&:nth-child(3){
-					  top: 25px;					  
-					}
 				}
 		  }
 		  // Button animation
@@ -106,11 +137,14 @@
 		position: relative;
 		padding-bottom: 29px;
 		margin-bottom: 50px;
+		transform: scale(0);
+		opacity: 0;
+		visibility: hidden;    
 		@include phone() {
 			padding-bottom: 20px;
 			margin-bottom: 20px;
 		}
-		&_active {		
+		&_active {	
 			&:after {
 	      content: '';
 	      position: absolute;
@@ -120,16 +154,28 @@
 	      bottom: 4px;
 	      background: #fff;
 	      transform: translateX(-50%);
-	    }
+	    }	
 	  }
 	}
 	&__link {
 		color: #fff;
 		text-decoration: none;
 		text-transform: uppercase;
-		transition: opacity .2s;
+		&:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      left: 50%;
+      bottom: 4px;
+      background: #fff;
+      transform: translateX(-50%);
+			transition: all .2s;
+    }
 		&:hover, &:focus, &:active {
-			opacity: .7;
+			&:after {
+				width: 90px;
+			}
 		}
 	}
 }

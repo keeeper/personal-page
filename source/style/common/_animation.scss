@@ -1,0 +1,12 @@
+@keyframes fadeInScale {
+  0% {
+  }
+  40% {    
+    transform: scale(1.1);
+  } 
+  100% {
+    opacity: 1;
+		visibility: visible;
+  	transform: scale(1);
+  }
+}
