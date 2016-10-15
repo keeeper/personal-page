@@ -37,37 +37,52 @@ function flipCard(){
 }
 
 
-
 //Blog scroll menu
 function BlogScroll(){
-	function init() {
-		$('.vertical-nav__link').on('click', function(e) {
-			e.preventDefault();
-	    var href = $(this).attr("href");
-	    var buttons = $('.vertical-nav__item');
-	    buttons.removeClass('vertical-nav__item_active');
-	    $(this).parent().toggleClass('vertical-nav__item_active');
-	    $('body').animate({
-	      scrollTop: $(href).offset().top
-	    }, 500);
-	    return false;
-	  });
+	function init() {		
+		$('.vertical-nav__link').click(function () {			
+			var href = $(this).attr("href");			
+			var coords = $('#' + href).offset().top;
+			$('body').animate({scrollTop: coords}, 500);
+			return false;
+		});
 
-	  var blogSidebar = $('.blog-sidebar'),
-				sidebarPosition = $('.vertical-nav__list').offset().top;
+		var lastID; // last current block
+		var elemID; // current block
 
-		$(window).scroll(function(e) {		
-				var pageOffset = $(window).scrollTop();
-				if(pageOffset > sidebarPosition) {
-					blogSidebar.addClass('blog-sidebar_fixed');
-				} else {
-					blogSidebar.removeClass('blog-sidebar_fixed');
+		$(window).scroll(function () {			
+			var docScroll = $(document).scrollTop();			
+			
+			$('.blog-post').each(function () {				
+				var curr = $(this).offset().top ;			
+				if (docScroll >= curr - $(this).height()) {					
+					elemID = $(this).attr('id');					
+					if (elemID != lastID) {
+						lastID = elemID;
+						$('.vertical-nav__list a').closest('li').removeClass('vertical-nav__item_active');
+						$('.vertical-nav__list a[href=' + elemID + ']').closest('li').addClass('vertical-nav__item_active');
+						$('.blog-post').removeClass('blog-post_current');
+						$(this).addClass('blog-post_current');
+					}
 				}
+			});
+		});
+
+		var blogSidebar = $('.blog-sidebar'),
+			sidebarPosition = $('.vertical-nav__list').offset().top;
+
+		$(window).scroll(function() {
+			var pageOffset = $(window).scrollTop();
+			if(pageOffset > sidebarPosition) {
+				blogSidebar.addClass('blog-sidebar_fixed');
+			} else {
+				blogSidebar.removeClass('blog-sidebar_fixed');
+			}
 		});
 
 		// Mobile toogle
-		$(window).on('click', function(){		
-				$('.blog-sidebar').toggleClass('blog-sidebar_active');
+		$(window).on('click', function(){
+			$('.blog-sidebar').toggleClass('blog-sidebar_active');
 		});
 	}
 	return {
