@@ -37,25 +37,27 @@ function flipCard(){
 }
 
 
+
 //Blog scroll menu
 function BlogScroll(){
-	function init() {		
-		$('.vertical-nav__link').click(function () {			
-			var href = $(this).attr("href");			
+	function init() {
+		
+		$('.vertical-nav__link').click(function () {
+			var href = $(this).attr("href");		
 			var coords = $('#' + href).offset().top;
 			$('body').animate({scrollTop: coords}, 500);
 			return false;
 		});
 
-		var lastID; // last current block
-		var elemID; // current block
+		var lastID; // Last visited artcicle
+		var elemID; // Current artcicle
 
 		$(window).scroll(function () {			
 			var docScroll = $(document).scrollTop();			
-			
 			$('.blog-post').each(function () {				
-				var curr = $(this).offset().top ;			
-				if (docScroll >= curr - $(this).height()) {					
+				var curr = $(this).offset().top ;
+
+				if (docScroll >= curr - $(this).height()) {				
 					elemID = $(this).attr('id');					
 					if (elemID != lastID) {
 						lastID = elemID;
@@ -217,8 +219,7 @@ var blur = (function(){
 				imgWidth = $('.blur-bg').width(),
 				posLeft = blurSection.offset().left - blur.offset().left,
 				posTop = blurSection.offset().top - blur.offset().top;
-
-			console.log('ssss');
+			
 			blur.css({
 				'background-size' : imgWidth + 'px' + ' ' + 'auto',
 				'background-position' : posLeft + 'px' + ' ' + posTop + 'px'
