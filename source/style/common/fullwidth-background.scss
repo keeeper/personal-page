@@ -1,13 +1,12 @@
 .fullwidth-background {
-  position: absolute;
-  // background: url("../img/bg-main.jpg") center 0 no-repeat;    
+  position: absolute;  
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;  
   &__canvas {
     width: 100%;
-    height: 100%;
+    height: 100%
   }
   &:before, &:after {
     content: '';

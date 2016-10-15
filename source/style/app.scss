@@ -247,6 +247,7 @@ img {
 .main-nav {  
   font-size: 0;
   text-align: justify;
+  backface-visibility: hidden;
 
   &__list {
     padding: 0;
@@ -356,9 +357,13 @@ img {
       position: absolute;      
       backface-visibility: hidden;
     }
+    &__front {
+      width: 100%;
+      transform: rotateY(0);
+    }
     &__back {
       width: 100%;
-      transform: rotateY( 180deg );
+      transform: rotateY(180deg);
     }
   }
 }
