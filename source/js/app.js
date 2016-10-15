@@ -244,6 +244,7 @@ $(window).resize(function(){
 	}
 
 });
+
 $(document).ready(function(){
 	var fsmenu = fsMenu().init(),
 			flipcard = flipCard().init(),
