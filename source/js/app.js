@@ -14,6 +14,22 @@ function fsMenu(){
 	}
 }
 
+// Arrow down
+function arrowDown(){
+	function init() {
+		$('.arrow-down').on('click', function(e){
+			e.preventDefault();
+			var coords = $('.content').offset().top;
+			console.log(coords);
+			$('body').animate({scrollTop: coords}, 500);			
+		});	
+	}
+	return {
+		init: init
+	}
+}
+
+
 
 
 //Flip Card
@@ -238,5 +254,8 @@ $(document).ready(function(){
 	}
 	if($('.contact-form-blur-bg').length){
 		blur.set();
+	}
+	if($('.arrow-down').length){
+		arrowDown().init();
 	}
 });
